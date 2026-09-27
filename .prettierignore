@@ -1,0 +1,14 @@
+.next
+node_modules
+pnpm-lock.yaml
+drizzle
+playwright-report
+test-results
+.data
+content/**/*.mdx
+.github
+assets
+pages/README.md
+docs
+content/**/*.md
+next-env.d.ts

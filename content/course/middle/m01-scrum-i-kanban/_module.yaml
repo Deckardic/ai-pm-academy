@@ -1,0 +1,29 @@
+id: m01
+slug: scrum-i-kanban
+order: 1
+title: Scrum и Kanban в глубину
+summary: Роли, события и артефакты, WIP-лимиты и поток. Антипаттерны и как их лечить.
+goals:
+  - Настраивать Scrum и Kanban под контекст
+  - Видеть и лечить антипаттерны
+  - Использовать ИИ в груминге бэклога
+status: published
+artifact: Разбор процесса своей команды
+keyConcepts:
+  - Scrum
+  - Kanban
+  - WIP-лимит
+  - спринт
+  - поток
+  - антипаттерны
+searchQueries:
+  - wip лимит что это
+  - антипаттерны scrum
+  - scrum и kanban отличия
+lessonsPlan:
+  - title: "Kanban: поток и WIP-лимиты"
+    focus: почему меньше — значит быстрее
+  - title: Scrum без театра
+    focus: события, которые приносят пользу
+  - title: Антипаттерны
+    focus: как диагностировать процесс

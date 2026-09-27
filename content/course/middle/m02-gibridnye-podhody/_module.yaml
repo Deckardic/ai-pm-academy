@@ -1,0 +1,21 @@
+id: m02
+slug: gibridnye-podhody
+order: 2
+title: Гибридные подходы
+summary: Water-Scrum-Fall, Stage-Gate и Agile, адаптация процесса под контекст.
+goals:
+  - Проектировать гибридный процесс
+  - Адаптировать процесс под ограничения компании
+status: planned
+artifact: Описание процесса проекта
+keyConcepts:
+  - гибридный подход
+  - Stage-Gate
+  - Water-Scrum-Fall
+searchQueries:
+  - гибридная методология управления проектами
+lessonsPlan:
+  - title: Зачем гибрид
+    focus: когда чистые методологии не подходят
+  - title: Паттерны гибрида
+    focus: Stage-Gate + Agile и другие

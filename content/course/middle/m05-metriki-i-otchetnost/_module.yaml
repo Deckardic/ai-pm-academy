@@ -1,0 +1,24 @@
+id: m05
+slug: metriki-i-otchetnost
+order: 5
+title: Метрики и отчётность
+summary: Cycle time, lead time, throughput, burn-down и дашборды.
+goals:
+  - Выбирать метрики потока
+  - Строить дашборд проекта
+  - Автоматизировать сводки с ИИ
+status: planned
+artifact: Дашборд проекта
+keyConcepts:
+  - cycle time
+  - lead time
+  - throughput
+  - burn-down
+searchQueries:
+  - метрики проекта
+  - cycle time lead time разница
+lessonsPlan:
+  - title: Метрики потока
+    focus: что и зачем измерять
+  - title: Дашборд
+    focus: как показывать метрики

@@ -1,0 +1,25 @@
+id: j11
+slug: zakrytie-proekta
+order: 11
+title: Закрытие проекта
+summary: Приёмка, ретроспектива и уроки проекта.
+goals:
+  - Проводить приёмку результатов
+  - Фасилитировать ретроспективу
+  - Оформлять lessons learned
+status: planned
+artifact: Отчёт о закрытии
+keyConcepts:
+  - приёмка
+  - ретроспектива
+  - lessons learned
+searchQueries:
+  - закрытие проекта этапы
+  - ретроспектива проекта
+lessonsPlan:
+  - title: Приёмка
+    focus: как закрыть обязательства
+  - title: Ретроспектива
+    focus: форматы и фасилитация
+  - title: Уроки проекта
+    focus: как их сохранить и использовать

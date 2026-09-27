@@ -389,7 +389,7 @@
 | БД | **Yandex Managed Service for PostgreSQL** (ru-central1) + ORM Drizzle (или Prisma) | ПДн в РФ, управляемые бэкапы и отказоустойчивость |
 | Auth | **Better Auth** (данные сессий и пользователей — в нашей БД, адаптер Drizzle) | TypeScript-first, активно развивается, email+пароль и magic link из коробки, Яндекс ID и VK ID подключаются через generic OAuth. Supabase Cloud не подходит по 152-ФЗ, self-hosted Supabase — лишний ops для хобби-проекта. Провайдеры: email+пароль, magic link, Яндекс ID, VK ID; P1 — Telegram, Сбер ID, Google |
 | Файлы | **Yandex Object Storage** (S3-совместимое) | Загрузки практических заданий, PDF сертификатов, шаблоны |
-| PDF сертификатов | Серверная генерация (например, @react-pdf/renderer) со встроенным кириллическим шрифтом | — |
+| PDF сертификатов | Страница сертификата с print-стилями: «Сохранить в PDF» через печать браузера | Без серверной генерации файлов; вид PDF совпадает со страницей проверки |
 | Email | **Yandex Cloud Postbox** (или Unisender) | Транзакционные письма без передачи ПДн за рубеж |
 | Аналитика | **Яндекс Метрика** (+ при необходимости self-hosted PostHog/Umami в Yandex Cloud для продуктовых событий); Яндекс Вебмастер (+ Google Search Console) | Продуктовые события и SEO без трансграничной передачи ПДн |
 | Хостинг | **Yandex Cloud**: Next.js в режиме standalone в Docker → Serverless Containers (или Compute Cloud / Managed Kubernetes при росте); Cloud CDN для статики; Certificate Manager (TLS); Lockbox (секреты); Container Registry | Всё в одном российском облаке, соответствие 152-ФЗ |
@@ -422,21 +422,25 @@ Badge / UserBadge (P1)
 ### 9.2. Структура контента в репозитории
 ```
 content/
-  junior/
-    _level.yaml                      # название, описание, порядок
-    j07-planning/
-      _module.yaml                   # цели, артефакт, порядок уроков
-      01-wbs.mdx                     # урок: frontmatter + MDX
-      quiz.yaml                      # пул вопросов теста модуля
-      assignment.mdx                 # практическое задание + чек-лист
-  middle/ ...
-  senior/ ...
+  course/
+    junior/
+      _level.yaml                    # название, описание, результаты, статус
+      _exam.yaml                     # итоговый экзамен (пул ≥ 3× вопросов)
+      j07-planirovanie/
+        _module.yaml                 # цели, артефакт, спецификация для генерации (план уроков)
+        01-wbs.mdx                   # урок: frontmatter + MDX
+        quiz.yaml                    # пул вопросов теста модуля
+        assignment.mdx               # практическое задание + чек-лист
+        _solution.mdx                # эталонное решение (открывается после сдачи)
+    middle/ ...
+    senior/ ...
   placement-test.yaml
-library/
-  prompts/*.yaml
-  templates/*.yaml                   # метаданные; файлы — в Object Storage
-  tools/*.yaml                       # каталог инструментов (P1)
-  glossary.yaml
+  library/
+    prompts/*.yaml
+    templates/*.yaml                 # шаблоны в Markdown: копирование и скачивание .md
+    glossary.yaml
+  legal/*.mdx                        # политика ПДн, согласие, соглашение, cookies
+  _meta/style-guide.md, lesson-template.mdx   # вход для генерации и ревью
 ```
 Frontmatter урока: `id` (стабильный), `slug` (транслит), `title`, `durationMin`, `revisedAt`, `aiTopic: true|false`, `draft`. MDX-компоненты: `<Callout>`, `<PromptCard>`, `<BeforeAfter>`, `<InlineQuiz>`, `<Exercise>`, `<Term>`, `<TemplateLink>`, `<KeyTakeaways>`.
 

@@ -1,0 +1,22 @@
+id: m06
+slug: byudzhet
+order: 6
+title: Бюджет
+summary: Оценка затрат, контроль бюджета и EVM.
+goals:
+  - Контролировать бюджет проекта
+  - Считать CPI, SPI и EAC
+status: planned
+artifact: Бюджетная модель
+keyConcepts:
+  - EVM
+  - CPI
+  - SPI
+  - EAC
+searchQueries:
+  - освоенный объем evm
+lessonsPlan:
+  - title: Бюджет проекта
+    focus: оценка и контроль
+  - title: EVM
+    focus: освоенный объём простыми словами

@@ -1,0 +1,18 @@
+id: j12
+slug: itogovyy-proekt-junior
+order: 12
+title: Итоговый проект Junior
+summary: Сквозной учебный проект от устава до закрытия с использованием ИИ.
+goals:
+  - Применить все инструменты уровня на одном кейсе
+status: planned
+artifact: Портфолио-пакет артефактов
+keyConcepts:
+  - портфолио PM
+searchQueries:
+  - портфолио проект менеджера
+lessonsPlan:
+  - title: Кейс
+    focus: вводные учебного проекта
+  - title: Сборка портфолио
+    focus: какие артефакты показать

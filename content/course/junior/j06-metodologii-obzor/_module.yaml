@@ -1,0 +1,27 @@
+id: j06
+slug: metodologii-obzor
+order: 6
+title: "Методологии: обзор"
+summary: Waterfall, Agile, Scrum, Kanban и гибрид — когда что выбирать.
+goals:
+  - Понимать идеи Waterfall и Agile
+  - Знать базу Scrum и Kanban
+  - Выбирать подход под проект
+status: planned
+artifact: Шпаргалка выбора подхода
+keyConcepts:
+  - Waterfall
+  - Agile
+  - Scrum
+  - Kanban
+  - гибрид
+searchQueries:
+  - agile и waterfall разница
+  - scrum или kanban что выбрать
+lessonsPlan:
+  - title: Waterfall и Agile
+    focus: две логики управления
+  - title: Scrum и Kanban
+    focus: ключевые элементы
+  - title: Как выбрать подход
+    focus: критерии выбора

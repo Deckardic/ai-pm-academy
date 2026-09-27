@@ -1,0 +1,27 @@
+id: m03
+slug: trebovaniya-i-skoup
+order: 3
+title: Требования и скоуп
+summary: User stories, критерии приёмки, приоритизация и управление изменениями.
+goals:
+  - Писать user stories и критерии приёмки
+  - Приоритизировать по MoSCoW, RICE и WSJF
+  - Управлять изменениями скоупа
+status: planned
+artifact: Бэклог с приоритизацией
+keyConcepts:
+  - user story
+  - критерии приёмки
+  - MoSCoW
+  - RICE
+  - WSJF
+searchQueries:
+  - rice приоритизация
+  - user story пример
+lessonsPlan:
+  - title: User stories
+    focus: формат и критерии приёмки
+  - title: Приоритизация
+    focus: MoSCoW, RICE, WSJF
+  - title: Управление изменениями
+    focus: как не утонуть в новых хотелках

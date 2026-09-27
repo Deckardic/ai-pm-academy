@@ -1,0 +1,176 @@
+id: placement-test
+kind: placement
+title: Тест на уровень
+passScore: 0.7
+questionsPerAttempt: 12
+questions:
+  - id: p-project
+    type: single
+    prompt: Что из этого — проект?
+    options:
+      - id: a
+        text: Ежедневные ответы клиентам в чате
+      - id: b
+        text: Запуск нового сайта компании к 1 марта
+      - id: c
+        text: Ежемесячная выплата зарплаты
+    correct: b
+    explanation: Проект временный и создаёт уникальный результат.
+    level: junior
+    area: pm
+  - id: p-triangle
+    type: single
+    prompt: Заказчик добавил функции, а срок и бюджет не изменились. Что под угрозой в первую очередь?
+    options:
+      - id: a
+        text: Качество результата
+      - id: b
+        text: Ничего
+      - id: c
+        text: Только настроение команды
+    correct: a
+    explanation:
+      "Треугольник ограничений: если растёт скоуп при фиксированных сроках и бюджете, страдает
+      качество."
+    level: junior
+    area: pm
+  - id: p-risk-issue
+    type: single
+    prompt: Чем риск отличается от проблемы?
+    options:
+      - id: a
+        text: Риск — возможное событие в будущем, проблема уже произошла
+      - id: b
+        text: Ничем
+      - id: c
+        text: Проблема менее важна
+    correct: a
+    explanation: Риск ещё не случился, проблема (issue) — уже реальность.
+    level: junior
+    area: pm
+  - id: p-llm
+    type: single
+    prompt: Модель назвала точную статистику с источником. Как поступить?
+    options:
+      - id: a
+        text: Использовать
+      - id: b
+        text: Проверить источник
+      - id: c
+        text: Округлить цифры
+    correct: b
+    explanation: Модели могут выдумывать цифры и источники — проверяйте первоисточник.
+    level: junior
+    area: ai
+  - id: p-data
+    type: single
+    prompt: Что можно отправить во внешний ИИ-сервис без согласования?
+    options:
+      - id: a
+        text: Паспортные данные клиента
+      - id: b
+        text: Обезличенное описание задачи
+      - id: c
+        text: Договор под NDA
+    correct: b
+    explanation: Персональные данные и документы под NDA — красная зона.
+    level: junior
+    area: ai
+  - id: p-wbs
+    type: single
+    prompt: Что такое WBS?
+    options:
+      - id: a
+        text: Список встреч
+      - id: b
+        text: Иерархическая структура работ проекта
+      - id: c
+        text: График отпусков
+    correct: b
+    explanation: WBS раскладывает результат проекта на пакеты работ.
+    level: junior
+    area: pm
+  - id: p-little
+    type: single
+    prompt: Команда завершает 5 задач в неделю, в работе 20. Среднее время прохождения?
+    options:
+      - id: a
+        text: 4 недели
+      - id: b
+        text: 1 неделя
+      - id: c
+        text: 25 недель
+    correct: a
+    explanation: "Закон Литтла: 20 ÷ 5 = 4 недели."
+    level: middle
+    area: pm
+  - id: p-rice
+    type: single
+    prompt: Что учитывает приоритизация RICE?
+    options:
+      - id: a
+        text: Охват, влияние, уверенность и затраты
+      - id: b
+        text: Только срочность
+      - id: c
+        text: Мнение самого громкого стейкхолдера
+    correct: a
+    explanation: RICE = Reach × Impact × Confidence ÷ Effort.
+    level: middle
+    area: pm
+  - id: p-forecast
+    type: single
+    prompt: Как надёжнее прогнозировать срок релиза?
+    options:
+      - id: a
+        text: По ощущениям команды
+      - id: b
+        text: По историческим данным о пропускной способности
+      - id: c
+        text: По дедлайну заказчика
+    correct: b
+    explanation: Прогноз по данным (например, методом Монте-Карло) точнее экспертных оценок.
+    level: middle
+    area: pm
+  - id: p-chain
+    type: single
+    prompt: Когда стоит разбить задачу для ИИ на цепочку промптов?
+    options:
+      - id: a
+        text: Всегда
+      - id: b
+        text: Когда задача сложная и промежуточный результат нужно проверить
+      - id: c
+        text: Никогда
+    correct: b
+    explanation: Цепочка даёт точки контроля на сложных задачах.
+    level: middle
+    area: ai
+  - id: p-portfolio
+    type: single
+    prompt: Два проекта конкурируют за одну команду. Что поможет принять решение?
+    options:
+      - id: a
+        text: Связь проектов со стратегическими целями и их ценность
+      - id: b
+        text: Кто из заказчиков громче
+      - id: c
+        text: Какой проект начался раньше
+    correct: a
+    explanation: Портфельное управление выбирает проекты по вкладу в стратегию.
+    level: senior
+    area: pm
+  - id: p-ai-policy
+    type: single
+    prompt: Сотрудники компании массово используют личные аккаунты ИИ-сервисов для работы. С чего начать?
+    options:
+      - id: a
+        text: Запретить всё
+      - id: b
+        text: Выработать политику использования ИИ и дать разрешённые инструменты
+      - id: c
+        text: Ничего не делать
+    correct: b
+    explanation: Запрет без альтернативы порождает shadow AI. Нужны политика и разрешённые инструменты.
+    level: senior
+    area: ai
