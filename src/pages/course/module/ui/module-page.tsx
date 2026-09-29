@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { ArrowRight, CheckCircle2, ClipboardCheck, FileText, PenLine } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronDown, ClipboardCheck, FileText, PenLine } from "lucide-react";
 import { getAllModules, getAssignment, getLevel, getModule } from "@/entities/course/index.server";
 import { LevelBadge, type Module } from "@/entities/course";
 import {
@@ -126,6 +126,46 @@ async function ModuleActions({ mod }: { mod: Module }) {
   );
 }
 
+/** Planned lessons: title, focus and what they will cover — the program is visible before the text is. */
+function UpcomingLessons({ plans, startIndex }: { plans: Module["lessonsPlan"]; startIndex: number }) {
+  if (plans.length === 0) return null;
+  return (
+    <ol className="mt-2 flex flex-col gap-2">
+      {plans.map((plan, index) => (
+        <li key={plan.slug}>
+          <details className="group rounded-xl shadow-[inset_0_0_0_1px_var(--line)]">
+            <summary className="flex cursor-pointer list-none items-center gap-3 p-4 sm:px-5 [&::-webkit-details-marker]:hidden">
+              <span className="grid size-5 shrink-0 place-items-center rounded-full border border-dashed border-line-strong" aria-hidden />
+              <span className="min-w-0 flex-1">
+                <span className="block text-fg-muted">
+                  <span className="mr-2 text-fg-subtle tabular-nums">{startIndex + index + 1}.</span>
+                  {plan.title}
+                </span>
+                <span className="mt-0.5 block truncate text-sm text-fg-subtle">{plan.focus}</span>
+              </span>
+              <Badge size="sm">Готовится</Badge>
+              <ChevronDown aria-hidden className="size-4 shrink-0 text-fg-subtle transition-transform duration-200 ease-out group-open:rotate-180" />
+            </summary>
+            <ul className="flex flex-col gap-1.5 px-4 pb-4 text-sm leading-relaxed text-fg-muted sm:px-5 sm:pl-13">
+              {plan.keyPoints.map((point) => (
+                <li key={point} className="flex gap-2">
+                  <span aria-hidden className="mt-[0.55em] size-1 shrink-0 rounded-full bg-fg-subtle" />
+                  {point}
+                </li>
+              ))}
+              {plan.practice ? (
+                <li className="mt-1 text-fg">
+                  <span className="font-medium">Практика:</span> {plan.practice}
+                </li>
+              ) : null}
+            </ul>
+          </details>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 async function ModuleContent({ params }: { params: Promise<Params> }) {
   const { level: levelSlug, module: moduleSlug } = await params;
   const level = getLevel(levelSlug);
@@ -166,6 +206,10 @@ async function ModuleContent({ params }: { params: Promise<Params> }) {
                   <Suspense fallback={<ModuleOutline lessons={mod.lessons} />}>
                     <LessonsWithProgress mod={mod} />
                   </Suspense>
+                  <UpcomingLessons
+                    plans={mod.lessonsPlan.filter((plan) => !mod.lessons.some((lesson) => lesson.slug === plan.slug))}
+                    startIndex={mod.lessons.length}
+                  />
                 </div>
               </section>
               {mod.hasQuiz || mod.hasAssignment ? (
@@ -182,17 +226,12 @@ async function ModuleContent({ params }: { params: Promise<Params> }) {
               ) : null}
             </>
           ) : (
-            <section className="rounded-xl p-6 shadow-[inset_0_0_0_1px_var(--line)]">
-              <h2 className="font-semibold">План модуля</h2>
+            <section aria-labelledby="plan-title">
+              <h2 id="plan-title" className="text-xl font-semibold tracking-tight">
+                Программа модуля
+              </h2>
               <p className="mt-1 text-sm text-fg-muted">Уроки готовятся и появятся здесь.</p>
-              <ol className="mt-4 flex flex-col gap-2">
-                {mod.lessonsPlan.map((lesson, index) => (
-                  <li key={lesson.title} className="flex gap-3 text-[0.9375rem]">
-                    <span className="text-fg-subtle tabular-nums">{index + 1}.</span>
-                    {lesson.title}
-                  </li>
-                ))}
-              </ol>
+              <UpcomingLessons plans={mod.lessonsPlan} startIndex={0} />
             </section>
           )}
         </div>

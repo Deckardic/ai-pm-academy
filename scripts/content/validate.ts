@@ -66,6 +66,15 @@ async function main() {
       error(`Модуль ${mod.id}: префикс id не соответствует уровню ${mod.levelId}`);
     }
     unique(mod.lessons, (lesson) => lesson.slug, `slug урока в ${mod.id}`);
+    unique(mod.lessonsPlan, (plan) => plan.slug, `slug в плане ${mod.id}`);
+    if (mod.lessonsPlan.length === 0) warn(`Модуль ${mod.id}: нет плана уроков (lessonsPlan)`);
+    mod.lessons.forEach((lesson, index) => {
+      const plan = mod.lessonsPlan[index];
+      if (!plan) warn(`Урок ${lesson.id} не описан в плане модуля ${mod.id}`);
+      else if (plan.slug !== lesson.slug) {
+        error(`Урок ${lesson.id}: slug «${lesson.slug}» не совпадает с планом («${plan.slug}») на позиции ${index + 1}`);
+      }
+    });
     if (mod.status === "published") {
       if (mod.lessons.length === 0) error(`Модуль ${mod.id} опубликован, но в нём нет уроков`);
       const quiz = getModuleQuiz(mod.dir);

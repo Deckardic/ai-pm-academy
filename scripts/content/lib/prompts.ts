@@ -19,6 +19,16 @@ export function lessonSystemPrompt(
   ].join("\n");
 }
 
+export type LessonPlanInput = {
+  slug: string;
+  title: string;
+  focus: string;
+  durationMin: number;
+  keyPoints: string[];
+  aiAngle?: string;
+  practice?: string;
+};
+
 export function lessonUserPrompt(input: {
   levelTitle: string;
   levelTagline: string;
@@ -27,26 +37,45 @@ export function lessonUserPrompt(input: {
   moduleGoals: string[];
   keyConcepts: string[];
   searchQueries: string[];
-  lessonTitle: string;
-  lessonFocus: string;
+  plan: LessonPlanInput;
   lessonId: string;
   otherLessons: string[];
   promptIds: string[];
   termIds: string[];
   today: string;
 }) {
+  const { plan } = input;
   return [
     `Уровень: ${input.levelTitle} — ${input.levelTagline}`,
     `Модуль: ${input.moduleTitle}. ${input.moduleSummary}`,
     `Цели модуля: ${input.moduleGoals.join("; ")}`,
     `Ключевые понятия модуля: ${input.keyConcepts.join(", ")}`,
-    `Поисковые запросы, на которые должен отвечать урок: ${input.searchQueries.join("; ")}`,
+    `Поисковые запросы, на которые должен отвечать модуль: ${input.searchQueries.join("; ")}`,
     "",
-    `Напиши урок «${input.lessonTitle}». Фокус: ${input.lessonFocus}.`,
-    `id урока: ${input.lessonId}. revisedAt: ${input.today}. draft: true.`,
+    `Напиши урок «${plan.title}». Фокус: ${plan.focus}.`,
+    `Обязательно раскрой (каждый пункт — раздел или его часть):`,
+    ...plan.keyPoints.map((point) => `- ${point}`),
+    plan.aiAngle ? `Ракурс ИИ в этом уроке: ${plan.aiAngle}.` : "Раздел про ИИ добавь, только если он действительно полезен в этой теме.",
+    plan.practice ? `Упражнение для читателя в конце урока: ${plan.practice}.` : "",
+    "",
+    `Frontmatter: id: ${input.lessonId}, slug: ${plan.slug}, durationMin: ${plan.durationMin}, revisedAt: ${input.today}, draft: true.`,
     `Другие уроки модуля (не дублируй их содержание): ${input.otherLessons.join("; ") || "нет"}.`,
     `Доступные промпты для <PromptCard id>: ${input.promptIds.join(", ")}.`,
     `Доступные термины для <Term id>: ${input.termIds.join(", ")}.`,
+  ]
+    .filter((line) => line !== "")
+    .join("\n");
+}
+
+export function assignmentSystemPrompt(styleGuide: string) {
+  return [
+    "Ты — методист курса для проект-менеджеров. Составь практическое задание модуля в формате MDX.",
+    "Задание выполняется на учебном кейсе или своём опыте, без персональных данных и сведений работодателя.",
+    "Ответ — только содержимое файла, начиная с frontmatter (---): id, title, durationMin, deliverable, checklist (4–6 проверяемых пунктов).",
+    "Тело: разделы «## Задание» (нумерованные шаги) и «## Как использовать ИИ» (что поручить ИИ и что проверить).",
+    "",
+    "# Стандарт стиля",
+    styleGuide,
   ].join("\n");
 }
 

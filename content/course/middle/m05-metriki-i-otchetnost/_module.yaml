@@ -4,21 +4,66 @@ order: 5
 title: Метрики и отчётность
 summary: Cycle time, lead time, throughput, burn-down и дашборды.
 goals:
-  - Выбирать метрики потока
-  - Строить дашборд проекта
-  - Автоматизировать сводки с ИИ
+- Выбирать метрики потока
+- Строить дашборд проекта
+- Автоматизировать сводки с ИИ
 status: planned
 artifact: Дашборд проекта
 keyConcepts:
-  - cycle time
-  - lead time
-  - throughput
-  - burn-down
+- cycle time
+- lead time
+- throughput
+- burn-down
 searchQueries:
-  - метрики проекта
-  - cycle time lead time разница
+- метрики проекта
+- cycle time lead time разница
 lessonsPlan:
-  - title: Метрики потока
-    focus: что и зачем измерять
-  - title: Дашборд
-    focus: как показывать метрики
+- slug: metriki-potoka
+  title: Метрики потока
+  focus: время цикла, время выполнения, пропускная способность
+  durationMin: 13
+  keyPoints:
+  - Lead time и cycle time
+  - Пропускная способность
+  - Работа в процессе и возраст задач
+  - Распределения вместо средних
+  practice: Посчитать метрики по учебной выгрузке
+- slug: burn-diagrammy-i-cfd
+  title: Burn-диаграммы и CFD
+  focus: как читать графики прогресса
+  durationMin: 12
+  keyPoints:
+  - Burn-down и burn-up
+  - Накопительная диаграмма потока
+  - Что показывает расширение полос
+  - Типичные ошибки чтения
+  practice: Найти узкое место по CFD
+- slug: dashbord-proekta
+  title: Дашборд проекта
+  focus: что показывать и кому
+  durationMin: 12
+  keyPoints:
+  - Разные аудитории — разные дашборды
+  - Меньше метрик, больше смысла
+  - 'Закон Гудхарта: метрика как цель портится'
+  - 'Дизайн: от вопроса к графику'
+  practice: Спроектировать дашборд для руководителя
+- slug: avtomatizaciya-otchetnosti
+  title: Автоматизация отчётности
+  focus: сводки из выгрузок с помощью ИИ
+  durationMin: 12
+  keyPoints:
+  - Выгрузка без персональных данных
+  - Сводка по шаблону
+  - Проверка цифр
+  - Регулярный процесс вместо ручной работы
+  practice: Настроить еженедельную сводку по выгрузке
+assignment:
+  title: Дашборд проекта
+  deliverable: Дашборд (таблица или трекер) и описание метрик
+  brief: 3–5 метрик с определениями, источник данных, аудитория и решения, которые дашборд помогает принимать.
+quizFocus:
+- lead time и cycle time
+- CFD
+- закон Гудхарта
+- проверка автоматических сводок

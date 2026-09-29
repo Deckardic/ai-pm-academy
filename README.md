@@ -19,6 +19,7 @@ pnpm dev                     # http://localhost:3000
 | `pnpm content:validate` | Схемы контента, перекрёстные ссылки, компиляция MDX, свежесть ИИ-уроков |
 | `pnpm content:generate --module j02` | Генерация уроков и теста модуля по спецификации (ИИ, офлайн) |
 | `pnpm content:review --module j02` | Перекрёстное ревью уроков моделью другого вендора |
+| `pnpm content:program` | Пересобрать `docs/PROGRAM.md` — программу курса из спецификаций модулей |
 | `pnpm test` · `pnpm test:e2e` | Юнит-тесты (Vitest) · e2e на production-сборке (Playwright) |
 | `pnpm db:generate` · `pnpm db:migrate` | Новая миграция из схемы · применение миграций к Postgres |
 | `pnpm check` | Всё, кроме e2e, одной командой |

@@ -35,7 +35,24 @@ export const moduleSchema = z.object({
   /** Spec fields for the generation pipeline (scripts/content). */
   keyConcepts: z.array(z.string()).default([]),
   searchQueries: z.array(z.string()).default([]),
-  lessonsPlan: z.array(z.object({ title: textSchema, focus: z.string() })).default([]),
+  /** Detailed lesson plan: the program of the module and the input for generation. */
+  lessonsPlan: z
+    .array(
+      z.object({
+        slug: slugSchema,
+        title: textSchema,
+        focus: z.string(),
+        durationMin: z.number().int().min(5).max(30).default(12),
+        keyPoints: z.array(z.string()).min(3),
+        aiAngle: z.string().optional(),
+        practice: z.string().optional(),
+      }),
+    )
+    .default([]),
+  /** Practical assignment spec (generated into assignment.mdx). */
+  assignment: z.object({ title: textSchema, deliverable: textSchema, brief: z.string() }).optional(),
+  /** What the module test must cover. */
+  quizFocus: z.array(z.string()).default([]),
   generation: z
     .object({ model: z.string(), promptVersion: z.string(), generatedAt: z.string() })
     .optional(),
