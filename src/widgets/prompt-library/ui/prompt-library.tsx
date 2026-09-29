@@ -10,12 +10,15 @@ import { Input } from "@/shared/ui";
 const chip =
   "pressable inline-flex h-8 cursor-pointer items-center gap-1.5 rounded-full px-3.5 text-sm font-medium shadow-[inset_0_0_0_1px_var(--line-strong)] hover:bg-bg-subtle aria-pressed:bg-fg aria-pressed:text-bg aria-pressed:shadow-none";
 
+const PAGE_SIZE = 24;
+
 /** Filtering is frequent, so the list updates instantly — no enter animations. */
 export function PromptLibrary({ prompts }: { prompts: Prompt[] }) {
   const [category, setCategory] = useState<PromptCategory | "all">("all");
   const [russianOnly, setRussianOnly] = useState(false);
   const [level, setLevel] = useState<Prompt["level"] | "all">("all");
   const [query, setQuery] = useState("");
+  const [limit, setLimit] = useState(PAGE_SIZE);
   const categories = useMemo(
     () =>
       (Object.keys(promptCategories) as PromptCategory[]).filter((key) =>
@@ -92,13 +95,23 @@ export function PromptLibrary({ prompts }: { prompts: Prompt[] }) {
       <p className="text-sm text-fg-muted" aria-live="polite">
         Найдено: {visible.length}
       </p>
+      <h2 className="sr-only">Промпты</h2>
       <div className={cn("grid gap-5 lg:grid-cols-2")}>
-        {visible.map((prompt) => (
+        {visible.slice(0, limit).map((prompt) => (
           <div key={prompt.id} id={prompt.id} className="scroll-mt-24">
             <PromptCard prompt={prompt} compact />
           </div>
         ))}
       </div>
+      {visible.length > limit ? (
+        <button
+          type="button"
+          className={cn(chip, "self-center")}
+          onClick={() => setLimit((value) => value + PAGE_SIZE)}
+        >
+          Показать ещё ({visible.length - limit})
+        </button>
+      ) : null}
     </div>
   );
 }

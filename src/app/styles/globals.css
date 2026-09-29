@@ -255,12 +255,20 @@
   from {
     opacity: 0;
     transform: translateY(12px);
-    filter: blur(4px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
+  }
+}
+
+/* The largest element of a page (its LCP) stays visible from the first frame and only settles. */
+@keyframes rise {
+  from {
+    transform: translateY(12px);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 
@@ -283,6 +291,10 @@
 .stagger > * {
   animation: var(--animate-enter);
   animation-delay: calc(var(--stagger-index, 0) * 60ms);
+}
+
+.stagger > h1 {
+  animation-name: rise;
 }
 
 /* Scroll reveal, fires once (see shared/ui/reveal). */
@@ -341,6 +353,10 @@
   /* Fewer and gentler: keep opacity, drop movement. */
   .stagger > * {
     animation: fade-in 200ms ease both;
+  }
+
+  .stagger > h1 {
+    animation: none;
   }
 
   .reveal {
