@@ -16,6 +16,7 @@ import { Breadcrumbs, ButtonLink, Container, Skeleton } from "@/shared/ui";
 import { LessonBody } from "@/widgets/lesson-body";
 import { LessonToc } from "@/widgets/lesson-toc";
 import { ModuleOutline } from "@/widgets/module-outline";
+import { LessonMaterials } from "./lesson-materials";
 
 type Params = { level: string; module: string; lesson: string };
 
@@ -229,6 +230,8 @@ async function LessonContent({ params }: { params: Promise<Params> }) {
               </ul>
             </section>
           ) : null}
+
+          <LessonMaterials lessonId={context.lesson.id} body={context.lesson.body} />
 
           <footer className="mt-12 flex max-w-[44rem] flex-col gap-8 border-t border-line pt-8">
             <Suspense fallback={<Skeleton className="h-12 w-64 rounded-xl" />}>

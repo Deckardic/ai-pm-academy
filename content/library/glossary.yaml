@@ -12,6 +12,7 @@ terms:
       - produkt
     lessonIds:
       - j01-01
+      - j02-01
   - id: operacionnaya-deyatelnost
     slug: operacionnaya-deyatelnost
     term: Операционная деятельность
@@ -45,7 +46,9 @@ terms:
       "Стейкхолдер (заинтересованная сторона) — любой, кто влияет на проект или на кого влияет
       его результат: заказчик, спонсор, пользователи, команда, смежные отделы, регуляторы."
     related: []
-    lessonIds: []
+    lessonIds:
+      - j05-02
+      - m09-01
   - id: ustav-proekta
     slug: ustav-proekta
     term: Устав проекта
@@ -55,7 +58,8 @@ terms:
       Устав проекта — короткий документ, который фиксирует цель, критерии успеха, границы, ключевые
       вехи, бюджет и роли. Его согласование со спонсором — формальный старт проекта.
     related: []
-    lessonIds: []
+    lessonIds:
+      - j05-03
   - id: wbs
     slug: wbs
     term: WBS
@@ -102,7 +106,9 @@ terms:
       Веха — значимое событие или контрольная точка проекта, например «договор подписан» или «бета-версия
       готова». У вехи нет длительности, она отмечает момент.
     related: []
-    lessonIds: []
+    lessonIds:
+      - j02-04
+      - j07-03
   - id: kriticheskiy-put
     slug: kriticheskiy-put
     term: Критический путь
@@ -113,7 +119,8 @@ terms:
       любой задачи на критическом пути сдвигает срок всего проекта.
     related:
       - veha
-    lessonIds: []
+    lessonIds:
+      - j07-04
   - id: risk
     slug: risk
     term: Риск
@@ -124,7 +131,9 @@ terms:
       Риски оценивают по вероятности и влиянию и ведут в реестре рисков.
     related:
       - problema
-    lessonIds: []
+    lessonIds:
+      - j08-01
+      - j08-02
   - id: problema
     slug: problema
     term: Проблема
@@ -135,7 +144,8 @@ terms:
       здесь нет.
     related:
       - risk
-    lessonIds: []
+    lessonIds:
+      - j08-01
   - id: scrum
     slug: scrum
     term: Scrum
@@ -149,6 +159,8 @@ terms:
       - scrum-master
     lessonIds:
       - j01-02
+      - j06-03
+      - m01-02
   - id: kanban
     slug: kanban
     term: Kanban
@@ -161,7 +173,9 @@ terms:
       - wip-limit
       - scrum
     lessonIds:
+      - j06-03
       - m01-01
+      - m01-04
   - id: wip-limit
     slug: wip-limit
     term: WIP-лимит
@@ -174,7 +188,9 @@ terms:
       - kanban
       - zakon-littla
     lessonIds:
+      - j06-03
       - m01-01
+      - m01-04
   - id: zakon-littla
     slug: zakon-littla
     term: Закон Литтла
@@ -200,6 +216,7 @@ terms:
       - zakon-littla
     lessonIds:
       - m01-01
+      - m05-01
   - id: scrum-master
     slug: scrum-master
     term: Scrum Master
@@ -226,6 +243,7 @@ terms:
       - prompt
     lessonIds:
       - j03-01
+      - j03-03
   - id: gallyucinaciya
     slug: gallyucinaciya
     term: Галлюцинация
@@ -238,6 +256,7 @@ terms:
       - llm
     lessonIds:
       - j03-01
+      - j03-04
   - id: kontekstnoe-okno
     slug: kontekstnoe-okno
     term: Контекстное окно
@@ -250,6 +269,8 @@ terms:
       - llm
     lessonIds:
       - j03-01
+      - j04-03
+      - m07-03
   - id: prompt
     slug: prompt
     term: Промпт
@@ -261,7 +282,8 @@ terms:
     related:
       - cepochka-promptov
       - llm
-    lessonIds: []
+    lessonIds:
+      - j04-01
   - id: cepochka-promptov
     slug: cepochka-promptov
     term: Цепочка промптов
@@ -273,6 +295,7 @@ terms:
     related:
       - prompt
     lessonIds:
+      - m03-05
       - m07-01
   - id: obezlichivanie
     slug: obezlichivanie
@@ -286,3 +309,2142 @@ terms:
       - llm
     lessonIds:
       - j03-02
+      - m07-03
+      - m11-02
+  - id: project-manager
+    slug: project-manager
+    term: Проект-менеджер
+    en: Project Manager
+    short: Отвечает за то, чтобы проект был доведён до результата в срок, в бюджет и с нужным качеством.
+    definition:
+      Проект-менеджер планирует работы, управляет сроками, бюджетом и рисками, договаривается
+      со стейкхолдерами и снимает блокеры команды. Его экспертиза — в организации работы, а не обязательно
+      в предмете проекта.
+    related:
+      - proekt
+      - product-manager
+    lessonIds:
+      - j01-02
+      - j01-04
+  - id: product-manager
+    slug: product-manager
+    term: Продакт-менеджер
+    en: Product Manager
+    short: Отвечает за то, что и зачем делать в продукте.
+    definition:
+      Продакт-менеджер исследует пользователей, формулирует гипотезы, приоритизирует бэклог и
+      отвечает за ценность продукта и его метрики.
+    related:
+      - produkt
+      - project-manager
+    lessonIds:
+      - j01-02
+  - id: delivery-manager
+    slug: delivery-manager
+    term: Delivery-менеджер
+    en: Delivery Manager
+    short: Отвечает за стабильную и предсказуемую поставку результата командами.
+    definition:
+      "Delivery-менеджер работает с потоком поставки одной или нескольких команд: метриками потока,
+      зависимостями и процессом, а не с одним проектом."
+    related:
+      - project-manager
+      - metriki-potoka
+    lessonIds:
+      - j01-02
+  - id: programma
+    slug: programma
+    term: Программа проектов
+    en: Program
+    short: Группа связанных проектов, которыми управляют вместе ради общих выгод.
+    definition:
+      Программа объединяет проекты, у которых общие цели, ресурсы или зависимости. Управление
+      программой фокусируется на выгодах для бизнеса и согласовании проектов между собой.
+    related:
+      - proekt
+      - portfel
+    lessonIds:
+      - j01-04
+  - id: portfel
+    slug: portfel
+    term: Портфель проектов
+    en: Portfolio
+    short: Совокупность проектов и программ организации, которые приоритизируют вместе.
+    definition:
+      Управление портфелем отвечает на вопрос, какие проекты запускать, продолжать или останавливать
+      с учётом стратегии и ресурсов.
+    related:
+      - programma
+    lessonIds:
+      - j01-04
+  - id: pmo
+    slug: pmo
+    term: Офис управления проектами
+    en: PMO
+    short: Подразделение, которое задаёт стандарты управления проектами в организации.
+    definition:
+      Офис управления проектами разрабатывает шаблоны и правила, собирает отчётность по проектам,
+      обучает проект-менеджеров и иногда управляет портфелем.
+    related:
+      - portfel
+    lessonIds:
+      - j01-04
+  - id: zhiznennyy-cikl-proekta
+    slug: zhiznennyy-cikl-proekta
+    term: Жизненный цикл проекта
+    en: Project life cycle
+    short: Последовательность фаз проекта от инициации до закрытия.
+    definition:
+      "Жизненный цикл обычно описывают группами процессов: инициация, планирование, исполнение,
+      мониторинг и контроль, закрытие. Фазы пересекаются, а контроль идёт всё время."
+    related:
+      - iniciaciya
+      - zakrytie-proekta
+    lessonIds:
+      - j02-01
+  - id: iniciaciya
+    slug: iniciaciya
+    term: Инициация
+    en: Initiation
+    short: Фаза, в которой определяют, зачем нужен проект, и официально его запускают.
+    definition:
+      На инициации формулируют цель и критерии успеха, находят спонсора и стейкхолдеров, фиксируют
+      ограничения. Результат — утверждённый устав проекта.
+    related:
+      - ustav-proekta
+      - zhiznennyy-cikl-proekta
+    lessonIds:
+      - j02-01
+      - j05-03
+  - id: planirovanie-proekta
+    slug: planirovanie-proekta
+    term: Планирование
+    en: Planning
+    short: Фаза, в которой определяют, что, кто, когда и за какие деньги делает.
+    definition:
+      "Результат планирования — план проекта: состав работ, график, бюджет, реестр рисков, план
+      коммуникаций. План уточняется по ходу проекта."
+    related:
+      - wbs
+      - bazovyy-plan
+    lessonIds:
+      - j02-01
+  - id: monitoring-i-kontrol
+    slug: monitoring-i-kontrol
+    term: Мониторинг и контроль
+    en: Monitoring and controlling
+    short: Сравнение факта с планом и управление отклонениями на всём протяжении проекта.
+    definition:
+      "Мониторинг и контроль идут параллельно другим фазам: PM отслеживает сроки, бюджет, риски
+      и изменения и принимает решения о корректировках."
+    related:
+      - zhiznennyy-cikl-proekta
+    lessonIds:
+      - j02-01
+  - id: zakrytie-proekta
+    slug: zakrytie-proekta
+    term: Закрытие проекта
+    en: Project closure
+    short: Фаза приёмки результата, передачи в эксплуатацию и подведения итогов.
+    definition:
+      На закрытии заказчик принимает результат, его передают в поддержку, закрывают договоры,
+      проводят ретроспективу и фиксируют уроки проекта.
+    related:
+      - priemka
+      - uroki-proekta
+    lessonIds:
+      - j02-01
+      - j11-01
+  - id: posledovatelnaya-detalizaciya
+    slug: posledovatelnaya-detalizaciya
+    term: Последовательная детализация
+    en: Progressive elaboration
+    short: Уточнение плана по мере того, как появляется информация.
+    definition:
+      На старте план описывают крупно, а ближайшие этапы детализируют по мере приближения. Это
+      позволяет не тратить силы на детали, которые всё равно изменятся.
+    related:
+      - planirovanie-proekta
+    lessonIds:
+      - j02-01
+  - id: treugolnik-ogranicheniy
+    slug: treugolnik-ogranicheniy
+    term: Треугольник ограничений
+    en: Triple constraint
+    short: Связь сроков, бюджета и содержания проекта, внутри которой находится качество.
+    definition:
+      Изменение одной стороны треугольника требует изменить другие или затрагивает качество. Инструмент
+      помогает показывать заказчику варианты вместо простого отказа.
+    related:
+      - skoup
+      - kachestvo
+    lessonIds:
+      - j02-02
+  - id: skoup
+    slug: skoup
+    term: Содержание проекта
+    en: Scope
+    short: Что именно проект должен создать и какие работы для этого нужны.
+    definition:
+      Содержание (скоуп) описывает результаты, их характеристики и критерии приёмки, а также то,
+      что не входит в проект.
+    related:
+      - treugolnik-ogranicheniy
+      - razrastanie-skoupa
+    lessonIds:
+      - j02-02
+      - j05-04
+  - id: kachestvo
+    slug: kachestvo
+    term: Качество
+    en: Quality
+    short: Степень соответствия результата требованиям и ожиданиям.
+    definition:
+      "В треугольнике ограничений качество находится внутри: когда сроки и бюджет зажаты при том
+      же объёме, первым страдает качество — сокращают тестирование и проверку."
+    related:
+      - treugolnik-ogranicheniy
+    lessonIds:
+      - j02-02
+  - id: kriterii-uspeha
+    slug: kriterii-uspeha
+    term: Критерии успеха
+    en: Success criteria
+    short: Измеримые условия, по которым понятно, что проект удался.
+    definition:
+      Критерии успеха фиксируют на старте и утверждают у спонсора. Хорошо разделять успех проекта
+      (сделали обещанное) и успех продукта (результат приносит пользу).
+    related:
+      - smart
+      - ustav-proekta
+    lessonIds:
+      - j02-03
+  - id: kontrolnaya-tochka
+    slug: kontrolnaya-tochka
+    term: Контрольная точка
+    en: Stage gate / checkpoint
+    short: "Веха, на которой принимают решение: продолжать, изменить или остановить проект."
+    definition:
+      На контрольной точке показывают статус, прогноз, риски и варианты. Если решения не принимается,
+      это статус-встреча, а не контрольная точка.
+    related:
+      - veha
+      - vorota
+    lessonIds:
+      - j02-04
+  - id: sponsor
+    slug: sponsor
+    term: Спонсор проекта
+    en: Sponsor
+    short: Руководитель, который отвечает за проект со стороны бизнеса и обеспечивает ресурсы.
+    definition:
+      Спонсор утверждает устав и бюджет, принимает решения за пределами полномочий PM и помогает
+      снимать организационные препятствия.
+    related:
+      - ustav-proekta
+      - stakeholder
+    lessonIds:
+      - j05-03
+  - id: zakazchik
+    slug: zakazchik
+    term: Заказчик
+    en: Customer / client
+    short: Сторона, для которой выполняется проект и которая принимает результат.
+    definition:
+      Заказчик формулирует потребность, участвует в согласованиях и приёмке. Во внутренних проектах
+      заказчиком бывает подразделение компании.
+    related:
+      - sponsor
+      - stakeholder
+    lessonIds:
+      - j05-02
+  - id: smart
+    slug: smart
+    term: SMART
+    en: SMART
+    short:
+      "Набор критериев проверяемой цели: конкретная, измеримая, достижимая, значимая, ограниченная
+      по времени."
+    definition:
+      SMART помогает превратить размытое пожелание в цель, выполнение которой можно проверить.
+      Цель описывает результат, а не список работ.
+    related:
+      - kriterii-uspeha
+      - biznes-cel
+    lessonIds:
+      - j05-01
+  - id: biznes-cel
+    slug: biznes-cel
+    term: Бизнес-цель
+    en: Business objective
+    short: Польза для организации, ради которой затевается проект.
+    definition:
+      Бизнес-цель — например, снизить нагрузку на регистратуру — достигается не только проектом.
+      Цель проекта описывает результат, который делает бизнес-цель достижимой.
+    related:
+      - smart
+    lessonIds:
+      - j05-01
+  - id: matrica-vlast-interes
+    slug: matrica-vlast-interes
+    term: Матрица «власть — интерес»
+    en: Power/interest grid
+    short: Способ разместить стейкхолдеров по влиянию на проект и интересу к нему.
+    definition:
+      "Матрица подсказывает стратегию: управлять плотно, держать удовлетворёнными, держать в курсе
+      или наблюдать. Она не показывает, за или против человек, поэтому её дополняют оценкой вовлечённости."
+    related:
+      - stakeholder
+      - vovlechennost
+    lessonIds:
+      - j05-02
+      - m09-01
+  - id: vovlechennost
+    slug: vovlechennost
+    term: Вовлечённость стейкхолдера
+    en: Stakeholder engagement
+    short: "Позиция стейкхолдера по отношению к проекту: от неосведомлённости до лидерства."
+    definition:
+      "Оценивают текущую и желаемую вовлечённость: не осведомлён, сопротивляется, нейтрален, поддерживает,
+      лидирует. Разрыв между ними определяет план работы со стейкхолдером."
+    related:
+      - matrica-vlast-interes
+    lessonIds:
+      - m09-01
+  - id: dopushchenie
+    slug: dopushchenie
+    term: Допущение
+    en: Assumption
+    short: То, что считают верным без доказательства и на чём строят план.
+    definition:
+      Если допущение окажется ложным, план придётся менять. Каждое непроверенное допущение — потенциальный
+      риск, его стоит проверить как можно раньше.
+    related:
+      - ogranichenie
+      - risk
+    lessonIds:
+      - j05-04
+  - id: ogranichenie
+    slug: ogranichenie
+    term: Ограничение
+    en: Constraint
+    short: То, что нельзя изменить и что сужает варианты решения.
+    definition:
+      Ограничения — фиксированная дата, лимит бюджета, требования закона. Их фиксируют в уставе
+      рядом с допущениями.
+    related:
+      - dopushchenie
+    lessonIds:
+      - j05-04
+  - id: razrastanie-skoupa
+    slug: razrastanie-skoupa
+    term: Разрастание содержания
+    en: Scope creep
+    short: Постепенное добавление работ без изменения сроков и бюджета.
+    definition:
+      Каждая просьба кажется маленькой, но вместе они съедают буфер и качество. Защита — границы
+      проекта и процедура управления изменениями.
+    related:
+      - skoup
+      - zapros-na-izmenenie
+    lessonIds:
+      - j05-04
+      - m03-04
+  - id: kick-off
+    slug: kick-off
+    term: Стартовая встреча
+    en: Kick-off meeting
+    short: Встреча, на которой команда и стейкхолдеры выравнивают понимание проекта в начале работ.
+    definition:
+      На стартовой встрече проговаривают цель, границы, роли, правила работы и ближайшие шаги,
+      а также выявляют скрытые ожидания.
+    related:
+      - ustav-proekta
+    lessonIds:
+      - j05-03
+  - id: waterfall
+    slug: waterfall
+    term: Каскадная модель
+    en: Waterfall
+    short: Подход, при котором этапы проекта идут строго последовательно.
+    definition:
+      Каскад уместен при стабильных требованиях, дорогих изменениях и результате, который нельзя
+      поставлять частями. Главный риск — поздняя обратная связь.
+    related:
+      - agile
+      - gibridnyy-podhod
+    lessonIds:
+      - j06-01
+  - id: agile
+    slug: agile
+    term: Agile
+    en: Agile
+    short: Набор ценностей и принципов гибкой разработки для работы в неопределённости.
+    definition:
+      Манифест Agile 2001 года ставит людей, работающий продукт, сотрудничество с заказчиком и
+      готовность к изменениям выше процессов, документации, контрактов и плана. Главный механизм — короткие
+      итерации с обратной связью.
+    related:
+      - scrum
+      - kanban
+      - iteraciya
+    lessonIds:
+      - j06-02
+  - id: iteraciya
+    slug: iteraciya
+    term: Итерация
+    en: Iteration
+    short: Короткий цикл работы с готовым результатом и обратной связью в конце.
+    definition:
+      "Итерация длится обычно от одной до четырёх недель: выбрать самое ценное, сделать, показать,
+      получить обратную связь, скорректировать план."
+    related:
+      - agile
+      - sprint
+    lessonIds:
+      - j06-02
+  - id: gibridnyy-podhod
+    slug: gibridnyy-podhod
+    term: Гибридный подход
+    en: Hybrid approach
+    short: Сочетание элементов разных методологий под ограничения проекта.
+    definition:
+      Типичный гибрид — фазы, вехи и контроль бюджета сверху, итерации внутри этапов. Каждый элемент
+      должен отвечать конкретному ограничению проекта.
+    related:
+      - waterfall
+      - agile
+      - vorota
+    lessonIds:
+      - j06-04
+      - m02-01
+  - id: sprint
+    slug: sprint
+    term: Спринт
+    en: Sprint
+    short: Итерация Scrum фиксированной длины — не больше месяца.
+    definition:
+      Спринт — контейнер для всех событий Scrum. В его конце команда получает инкремент, соответствующий
+      определению готовности.
+    related:
+      - scrum
+      - cel-sprinta
+      - inkrement
+    lessonIds:
+      - j06-03
+      - m01-02
+  - id: cel-sprinta
+    slug: cel-sprinta
+    term: Цель спринта
+    en: Sprint Goal
+    short: Одна фраза о ценности, ради которой нужен спринт.
+    definition:
+      "Цель спринта даёт команде фокус и гибкость: состав задач может меняться, если это приближает
+      к цели."
+    related:
+      - sprint
+    lessonIds:
+      - m01-02
+  - id: product-owner
+    slug: product-owner
+    term: Владелец продукта
+    en: Product Owner
+    short: Роль Scrum, отвечающая за ценность продукта и порядок бэклога.
+    definition: Product Owner решает, что делать дальше, ведёт бэклог продукта и принимает решения по приоритетам.
+    related:
+      - scrum
+      - beklog-produkta
+    lessonIds:
+      - j06-03
+  - id: razrabotchiki-scrum
+    slug: razrabotchiki-scrum
+    term: Разработчики (Scrum)
+    en: Developers
+    short: Все участники Scrum-команды, которые создают инкремент.
+    definition:
+      В Scrum разработчиками называют не только программистов, но и аналитиков, дизайнеров, тестировщиков
+      — всех, кто делает результат.
+    related:
+      - scrum
+    lessonIds:
+      - j06-03
+  - id: beklog-produkta
+    slug: beklog-produkta
+    term: Бэклог продукта
+    en: Product Backlog
+    short: Упорядоченный список всего, что может понадобиться в продукте.
+    definition:
+      Бэклог продукта ведёт Product Owner. Верхние элементы детализированы и готовы к работе,
+      нижние — крупнее и менее определённы.
+    related:
+      - product-owner
+      - gruming
+    lessonIds:
+      - j06-03
+      - m01-03
+  - id: beklog-sprinta
+    slug: beklog-sprinta
+    term: Бэклог спринта
+    en: Sprint Backlog
+    short: Задачи, которые команда взяла в спринт, и план их выполнения.
+    definition:
+      Бэклог спринта принадлежит разработчикам и меняется по ходу спринта, пока это приближает
+      к цели спринта.
+    related:
+      - sprint
+      - cel-sprinta
+    lessonIds:
+      - j06-03
+  - id: inkrement
+    slug: inkrement
+    term: Инкремент
+    en: Increment
+    short: Готовый результат спринта, соответствующий определению готовности.
+    definition: Инкремент — шаг к цели продукта, который можно показать и, при необходимости, выпустить.
+    related:
+      - definition-of-done
+    lessonIds:
+      - j06-03
+  - id: daily-scrum
+    slug: daily-scrum
+    term: Ежедневный Scrum
+    en: Daily Scrum
+    short: 15-минутная встреча разработчиков для синхронизации вокруг цели спринта.
+    definition:
+      Ежедневный Scrum — встреча команды для команды, а не отчёт менеджеру. Удобно идти по доске
+      от задач, ближайших к завершению.
+    related:
+      - sprint
+    lessonIds:
+      - j06-03
+      - m01-02
+  - id: obzor-sprinta
+    slug: obzor-sprinta
+    term: Обзор спринта
+    en: Sprint Review
+    short: Событие, на котором показывают результат и получают обратную связь.
+    definition:
+      На обзоре участвуют стейкхолдеры и по возможности пользователи. Итог — изменения в бэклоге
+      продукта.
+    related:
+      - sprint
+    lessonIds:
+      - m01-02
+  - id: retrospektiva
+    slug: retrospektiva
+    term: Ретроспектива
+    en: Retrospective
+    short: Встреча, на которой команда разбирает, как улучшить свою работу.
+    definition:
+      Работающая ретроспектива заканчивается одним-двумя конкретными действиями с владельцами
+      и проверкой на следующей встрече.
+    related:
+      - uroki-proekta
+    lessonIds:
+      - m01-02
+      - j11-02
+  - id: definition-of-done
+    slug: definition-of-done
+    term: Определение готовности
+    en: Definition of Done
+    short: Общий для команды критерий, когда работа считается завершённой.
+    definition:
+      "Definition of Done делает понятие «готово» одинаковым для всех: например, прошла ревью
+      и тесты, принята продактом, готова к выкладке."
+    related:
+      - definition-of-ready
+      - inkrement
+    lessonIds:
+      - m01-03
+  - id: definition-of-ready
+    slug: definition-of-ready
+    term: Критерии готовности к работе
+    en: Definition of Ready
+    short: Договорённость команды о том, когда задачу можно брать в работу.
+    definition:
+      "Пример критериев: понятна проблема, есть критерии приёмки, задача оценена и помещается
+      в спринт. Это не должно становиться бюрократическим барьером."
+    related:
+      - definition-of-done
+    lessonIds:
+      - m01-03
+  - id: gruming
+    slug: gruming
+    term: Уточнение бэклога
+    en: Backlog refinement
+    short: Регулярная работа по детализации, оценке и упорядочиванию бэклога.
+    definition:
+      Детально готовы задачи на один-два спринта вперёд, крупнее — на квартал. Старые неактуальные
+      задачи удаляют.
+    related:
+      - beklog-produkta
+    lessonIds:
+      - m01-03
+  - id: vertikalnaya-narezka
+    slug: vertikalnaya-narezka
+    term: Вертикальная нарезка
+    en: Vertical slicing
+    short: Разделение крупной задачи на части, каждая из которых даёт пользу.
+    definition:
+      Режут по сценариям, типам пользователей, правилам или данным, а не по слоям системы. Горизонтальная
+      нарезка откладывает пользу до готовности всех частей.
+    related:
+      - user-story
+    lessonIds:
+      - m01-03
+  - id: karg-skram
+    slug: karg-skram
+    term: Карго-скрам
+    en: Cargo cult Scrum
+    short: Соблюдение внешней формы Scrum без инспекции и адаптации.
+    definition:
+      "Признаки: нет цели спринта, половина задач переносится, дейли — отчёт, на обзоре нет пользователей,
+      ретро не приводит к изменениям."
+    related:
+      - scrum
+    lessonIds:
+      - m01-02
+  - id: klass-obsluzhivaniya
+    slug: klass-obsluzhivaniya
+    term: Класс обслуживания
+    en: Class of service
+    short: Категория задач Kanban со своими правилами обработки.
+    definition:
+      "Классический набор: срочный, с фиксированной датой, стандартный, нематериальный. Срочный
+      класс обязательно ограничивают."
+    related:
+      - kanban
+    lessonIds:
+      - m01-04
+  - id: yavnye-politiki
+    slug: yavnye-politiki
+    term: Явные политики
+    en: Explicit policies
+    short: Записанные правила работы Kanban-системы.
+    definition:
+      Политики описывают критерии перехода, WIP-лимиты, приоритеты и правила для блокеров. Их
+      формулирует и пересматривает команда.
+    related:
+      - kanban
+      - wip-limit
+    lessonIds:
+      - m01-04
+  - id: bloker
+    slug: bloker
+    term: Блокер
+    en: Blocker
+    short: Событие, из-за которого задача не может двигаться дальше.
+    definition:
+      Блокеры помечают сразу, разбирают ежедневно и регулярно считают — это данные для разговора
+      с руководством и соседними командами.
+    related:
+      - kanban
+    lessonIds:
+      - m01-04
+  - id: vozrast-zadachi
+    slug: vozrast-zadachi
+    term: Возраст задачи
+    en: Work item age
+    short: Сколько времени прошло с начала работы над незавершённой задачей.
+    definition:
+      "Возраст задачи — ранний сигнал: если задача старше, чем 85% ранее завершённых, её пора
+      разобрать."
+    related:
+      - cycle-time
+    lessonIds:
+      - m01-04
+      - m05-01
+  - id: antipattern
+    slug: antipattern
+    term: Антипаттерн
+    en: Anti-pattern
+    short: Распространённое решение, которое кажется разумным, но вредит.
+    definition:
+      Типичные антипаттерны процесса — вечные переносы спринтов, «всё срочное», доска не отражает
+      реальность, метрики ради отчёта.
+    related:
+      - karg-skram
+    lessonIds:
+      - m01-05
+  - id: velocity
+    slug: velocity
+    term: Скорость команды
+    en: Velocity
+    short: Сумма оценок задач, завершённых командой за спринт.
+    definition:
+      Velocity используют для планирования внутри команды. Сравнивать команды по ней нельзя, а
+      делать её целью — вредно.
+    related:
+      - story-points
+    lessonIds:
+      - m04-02
+      - m01-05
+  - id: dekompoziciya
+    slug: dekompoziciya
+    term: Декомпозиция
+    en: Decomposition
+    short: Разделение большой работы на меньшие управляемые части.
+    definition: "Декомпозиция — основа WBS и нарезки задач: работа делится, пока её нельзя оценить и поручить."
+    related:
+      - wbs
+      - paket-rabot
+    lessonIds:
+      - j07-01
+  - id: pravilo-8-80
+    slug: pravilo-8-80
+    term: Правило 8–80
+    en: 8/80 rule
+    short: "Ориентир размера пакета работ: от 8 до 80 часов."
+    definition: Мельче — начинается микроменеджмент, крупнее — трудно оценить работу и заметить отставание.
+    related:
+      - paket-rabot
+    lessonIds:
+      - j07-01
+  - id: ekspertnaya-ocenka
+    slug: ekspertnaya-ocenka
+    term: Экспертная оценка
+    en: Expert judgment
+    short: Оценка работы по опыту человека, который её делал.
+    definition: Быстрый способ, но зависит от опыта и оптимизма эксперта. Лучше, когда оценивает исполнитель.
+    related:
+      - trehtochechnaya-ocenka
+    lessonIds:
+      - j07-02
+  - id: ocenka-po-analogii
+    slug: ocenka-po-analogii
+    term: Оценка по аналогии
+    en: Analogous estimating
+    short: Оценка по фактическим данным похожих работ или проектов.
+    definition:
+      Берут факт похожей работы и корректируют на отличия. Работает, если сохраняются данные прошлых
+      проектов.
+    related:
+      - ekspertnaya-ocenka
+    lessonIds:
+      - j07-02
+      - m06-01
+  - id: trehtochechnaya-ocenka
+    slug: trehtochechnaya-ocenka
+    term: Трёхточечная оценка
+    en: Three-point estimate
+    short: Оценка через оптимистичное, наиболее вероятное и пессимистичное значения.
+    definition:
+      "Ожидаемая длительность по формуле PERT: (O + 4M + P) / 6. Разрыв между O и P показывает
+      неопределённость и подсказывает риски."
+    related:
+      - pert
+      - bufer
+    lessonIds:
+      - j07-02
+  - id: pert
+    slug: pert
+    term: PERT
+    en: PERT
+    short: Формула ожидаемой длительности (O + 4M + P) / 6.
+    definition:
+      PERT взвешивает наиболее вероятную оценку сильнее крайних. Пессимистичный хвост сдвигает
+      ожидание вправо.
+    related:
+      - trehtochechnaya-ocenka
+    lessonIds:
+      - j07-02
+  - id: bufer
+    slug: bufer
+    term: Буфер
+    en: Buffer
+    short: Явный запас времени на неопределённость.
+    definition:
+      Буфер лучше держать общим — в конце графика или перед вехой, — чем прятать в каждой задаче.
+      PM следит за его расходом.
+    related:
+      - rezerv-na-riski
+    lessonIds:
+      - j07-02
+  - id: zavisimost
+    slug: zavisimost
+    term: Зависимость
+    en: Dependency
+    short: Связь, при которой одна работа не может начаться или закончиться без другой.
+    definition:
+      Чаще всего встречается зависимость «окончание — начало». Внешние зависимости — от подрядчиков,
+      заказчика, регулятора — главный источник сдвигов.
+    related:
+      - diagramma-ganta
+    lessonIds:
+      - j07-03
+  - id: diagramma-ganta
+    slug: diagramma-ganta
+    term: Диаграмма Ганта
+    en: Gantt chart
+    short: График, где работы показаны полосами на шкале времени.
+    definition:
+      Диаграмма Ганта показывает сроки, связи и вехи, но не показывает загрузку людей и неопределённость
+      оценок.
+    related:
+      - zavisimost
+      - veha
+    lessonIds:
+      - j07-03
+  - id: rezerv-vremeni
+    slug: rezerv-vremeni
+    term: Резерв времени
+    en: Float / slack
+    short: На сколько работу можно задержать без сдвига срока проекта.
+    definition: У работ на критическом пути резерв нулевой. Резерв общий для цепочки работ и может закончиться.
+    related:
+      - kriticheskiy-put
+    lessonIds:
+      - j07-04
+  - id: bazovyy-plan
+    slug: bazovyy-plan
+    term: Базовый план
+    en: Baseline
+    short: Утверждённая версия плана, с которой сравнивают факт.
+    definition:
+      Базовый план сроков и стоимости меняют только через управление изменениями — иначе отклонения
+      невозможно измерить.
+    related:
+      - planirovanie-proekta
+      - evm
+    lessonIds:
+      - j02-01
+      - m06-03
+  - id: raci
+    slug: raci
+    term: RACI
+    en: RACI matrix
+    short: "Матрица распределения ответственности: исполняет, отвечает, консультирует, информируется."
+    definition:
+      У каждой работы ровно один ответственный (A). Матрица помогает договориться о ролях и заметить
+      перегрузку.
+    related:
+      - project-manager
+    lessonIds:
+      - j01-02
+      - j07-05
+  - id: zagruzka
+    slug: zagruzka
+    term: Загрузка ресурсов
+    en: Resource loading
+    short: Сколько работы назначено человеку в каждый период относительно его доступности.
+    definition:
+      "Людей не планируют на 100%: часть времени уходит на встречи, поддержку, другие проекты.
+      Перегрузку находят суммированием назначений по неделям."
+    related:
+      - vyravnivanie
+    lessonIds:
+      - j07-05
+  - id: vyravnivanie
+    slug: vyravnivanie
+    term: Выравнивание ресурсов
+    en: Resource leveling
+    short: Изменение графика, чтобы устранить перегрузку людей.
+    definition:
+      Начинают со сдвига некритических работ в пределах резерва, затем перераспределяют работу.
+      Выравнивание обычно удлиняет проект.
+    related:
+      - zagruzka
+      - rezerv-vremeni
+    lessonIds:
+      - j07-05
+  - id: oshibka-planirovaniya
+    slug: oshibka-planirovaniya
+    term: Ошибка планирования
+    en: Planning fallacy
+    short: Склонность недооценивать время на собственные задачи.
+    definition:
+      "Описана психологами Даниэлем Канеманом и Амосом Тверски. Противоядие — взгляд снаружи:
+      фактические данные похожих работ."
+    related:
+      - yakorenie
+    lessonIds:
+      - m04-01
+  - id: yakorenie
+    slug: yakorenie
+    term: Якорение
+    en: Anchoring
+    short: Склонность опираться на первую услышанную цифру.
+    definition:
+      Если руководитель назвал срок до оценки, оценки тяготеют к нему. Просите оценку до объявления
+      желаемой даты.
+    related:
+      - oshibka-planirovaniya
+    lessonIds:
+      - m04-01
+  - id: story-points
+    slug: story-points
+    term: Story points
+    en: Story points
+    short: Относительная оценка объёма, сложности и неопределённости задачи.
+    definition:
+      Задачу сравнивают с эталонной, обычно по шкале, похожей на числа Фибоначчи. Шкала у каждой
+      команды своя.
+    related:
+      - velocity
+      - poker-planirovaniya
+    lessonIds:
+      - m04-02
+  - id: poker-planirovaniya
+    slug: poker-planirovaniya
+    term: Покер планирования
+    en: Planning poker
+    short: Способ получить независимые оценки задачи и обсудить расхождения.
+    definition:
+      Все одновременно открывают карты с оценками; авторы крайних оценок объясняют свою логику.
+      Ценность — в обсуждении, а не в числе.
+    related:
+      - story-points
+    lessonIds:
+      - m04-02
+  - id: no-estimates
+    slug: no-estimates
+    term: Подход без оценок
+    en: "#NoEstimates"
+    short: Прогнозирование по количеству задач сопоставимого размера вместо оценок.
+    definition: Команда тратит время на нарезку задач, а для прогноза использует пропускную способность.
+    related:
+      - throughput
+      - monte-karlo
+    lessonIds:
+      - m04-02
+  - id: monte-karlo
+    slug: monte-karlo
+    term: Метод Монте-Карло
+    en: Monte Carlo simulation
+    short: Прогноз сроков через тысячи случайных «проигрываний» будущего по истории.
+    definition:
+      Симуляция случайно выбирает недели из истории пропускной способности, пока не закончится
+      объём, и даёт распределение дат с уровнями уверенности.
+    related:
+      - throughput
+      - uroven-uverennosti
+    lessonIds:
+      - m04-03
+  - id: uroven-uverennosti
+    slug: uroven-uverennosti
+    term: Уровень уверенности прогноза
+    en: Confidence level
+    short: Доля симуляций, в которых работа завершается к дате.
+    definition:
+      Прогноз по средней — это около 50% уверенности. Для внешних обязательств обычно берут 85%
+      и выше.
+    related:
+      - monte-karlo
+    lessonIds:
+      - m04-03
+      - m04-04
+  - id: lead-time
+    slug: lead-time
+    term: Время выполнения
+    en: Lead time
+    short: Время от появления запроса до получения результата.
+    definition:
+      "Lead time чувствует заказчик: в него входит и ожидание в очереди, и работа. Разница с cycle
+      time — время в очереди."
+    related:
+      - cycle-time
+    lessonIds:
+      - m05-01
+  - id: throughput
+    slug: throughput
+    term: Пропускная способность
+    en: Throughput
+    short: Количество задач, завершённых за период.
+    definition:
+      Пропускная способность — простая метрика потока и основа прогноза методом Монте-Карло. Важен
+      не только средний уровень, но и разброс.
+    related:
+      - monte-karlo
+      - zakon-littla
+    lessonIds:
+      - m05-01
+      - m04-03
+  - id: wip
+    slug: wip
+    term: Работа в процессе
+    en: Work in progress, WIP
+    short: Количество начатых, но не завершённых задач.
+    definition:
+      По закону Литтла при той же пропускной способности рост WIP увеличивает время прохождения
+      задач.
+    related:
+      - wip-limit
+      - zakon-littla
+    lessonIds:
+      - m05-01
+  - id: metriki-potoka
+    slug: metriki-potoka
+    term: Метрики потока
+    en: Flow metrics
+    short: "Показатели движения работы через систему: время, пропускная способность, WIP, возраст."
+    definition:
+      "Метрики потока смотрят как распределения, а не как средние: медиана и 85-й процентиль честнее
+      среднего."
+    related:
+      - lead-time
+      - throughput
+      - wip
+    lessonIds:
+      - m05-01
+  - id: procentil
+    slug: procentil
+    term: Процентиль
+    en: Percentile
+    short: Значение, которое не превышает заданная доля наблюдений.
+    definition:
+      85-й процентиль времени цикла означает, что 85% задач выполнялись не дольше этого значения.
+      Для обещаний он честнее среднего.
+    related:
+      - metriki-potoka
+    lessonIds:
+      - m05-01
+  - id: burn-down
+    slug: burn-down
+    term: Диаграмма сгорания
+    en: Burn-down chart
+    short: График оставшейся работы во времени.
+    definition:
+      "Burn-down показывает, успеваем ли к дате, но скрывает рост объёма: линия может стоять,
+      хотя команда работает."
+    related:
+      - burn-up
+    lessonIds:
+      - m05-02
+  - id: burn-up
+    slug: burn-up
+    term: Диаграмма роста
+    en: Burn-up chart
+    short: График сделанной работы и общего объёма на одном поле.
+    definition: Burn-up разделяет темп команды и рост скоупа, поэтому лучше подходит для разговора со стейкхолдерами.
+    related:
+      - burn-down
+    lessonIds:
+      - m05-02
+  - id: cfd
+    slug: cfd
+    term: Накопительная диаграмма потока
+    en: Cumulative flow diagram, CFD
+    short: График количества задач на каждом этапе процесса во времени.
+    definition: Расширяющаяся полоса этапа означает, что там копится работа — это узкое место.
+    related:
+      - uzkoe-mesto
+    lessonIds:
+      - m05-02
+  - id: uzkoe-mesto
+    slug: uzkoe-mesto
+    term: Узкое место
+    en: Bottleneck
+    short: Этап процесса, который ограничивает пропускную способность всей системы.
+    definition:
+      Узкое место видно по накоплению работы перед этапом. Ускорять другие этапы бесполезно —
+      нужно помочь узкому месту.
+    related:
+      - cfd
+    lessonIds:
+      - m05-02
+  - id: dashbord
+    slug: dashbord
+    term: Дашборд
+    en: Dashboard
+    short: Набор метрик и графиков для принятия решений.
+    definition:
+      "Хороший дашборд строится от вопросов аудитории: три-пять метрик с определениями, источником
+      и решением, которое по ним принимается."
+    related:
+      - zakon-gudharta
+    lessonIds:
+      - m05-03
+  - id: zakon-gudharta
+    slug: zakon-gudharta
+    term: Закон Гудхарта
+    en: Goodhart's law
+    short: Когда показатель становится целью, он перестаёт быть хорошим показателем.
+    definition:
+      "Метрики, по которым оценивают людей, начинают подгонять: дробят задачи, растят оценки.
+      Метрики используют для понимания системы."
+    related:
+      - dashbord
+      - velocity
+    lessonIds:
+      - m05-03
+  - id: byudzhet-proekta
+    slug: byudzhet-proekta
+    term: Бюджет проекта
+    en: Project budget
+    short: Утверждённая сумма на проект, распределённая по статьям и периодам.
+    definition:
+      Бюджет включает команду, подрядчиков, закупки, обучение и резервы. Распределение по месяцам
+      позволяет вести план-факт.
+    related:
+      - plan-fakt
+      - rezerv-na-riski
+    lessonIds:
+      - m06-01
+  - id: rezerv-na-riski
+    slug: rezerv-na-riski
+    term: Резерв на риски
+    en: Contingency reserve
+    short: Деньги или время на известные риски из реестра.
+    definition:
+      Размер резерва обосновывают реестром рисков. Им обычно управляет PM в рамках согласованных
+      правил.
+    related:
+      - upravlencheskiy-rezerv
+      - risk
+    lessonIds:
+      - m06-01
+      - j08-03
+  - id: upravlencheskiy-rezerv
+    slug: upravlencheskiy-rezerv
+    term: Управленческий резерв
+    en: Management reserve
+    short: Деньги на непредвиденное, которыми распоряжается спонсор.
+    definition: Управленческий резерв предназначен для «неизвестных неизвестных». PM запрашивает его с обоснованием.
+    related:
+      - rezerv-na-riski
+    lessonIds:
+      - m06-01
+  - id: plan-fakt
+    slug: plan-fakt
+    term: План-факт
+    en: Plan vs actual
+    short: Сравнение плановых и фактических затрат по периодам и статьям.
+    definition:
+      Отклонения бывают из-за сдвига во времени, перерасхода или изменения объёма. Недорасход
+      часто означает отставание работ.
+    related:
+      - byudzhet-proekta
+      - evm
+    lessonIds:
+      - m06-02
+  - id: obyazatelstva
+    slug: obyazatelstva
+    term: Обязательства
+    en: Commitments
+    short: Согласованные, но ещё не оплаченные расходы.
+    definition:
+      Подписанные договоры и согласованные счета учитывают в прогнозе бюджета — так перерасход
+      виден в момент решения, а не оплаты.
+    related:
+      - plan-fakt
+    lessonIds:
+      - m06-02
+  - id: evm
+    slug: evm
+    term: Метод освоенного объёма
+    en: Earned Value Management, EVM
+    short: Метод контроля, сравнивающий план, выполненную работу и затраты.
+    definition:
+      EVM оперирует величинами PV, EV и AC и индексами CPI и SPI. Работает при честной оценке
+      выполненной работы и стабильном базовом плане.
+    related:
+      - pv
+      - ev
+      - ac
+    lessonIds:
+      - m06-03
+  - id: pv
+    slug: pv
+    term: Плановый объём
+    en: Planned Value, PV
+    short: Плановая стоимость работы, которая должна быть выполнена к дате.
+    definition: PV берут из бюджета, распределённого по времени.
+    related:
+      - evm
+      - ev
+    lessonIds:
+      - m06-03
+  - id: ev
+    slug: ev
+    term: Освоенный объём
+    en: Earned Value, EV
+    short: Плановая стоимость фактически выполненной работы.
+    definition: Если выполнено 40% работы, EV = 40% × BAC. Надёжнее считать по завершённым пакетам работ.
+    related:
+      - evm
+      - pv
+      - ac
+    lessonIds:
+      - m06-03
+  - id: ac
+    slug: ac
+    term: Фактическая стоимость
+    en: Actual Cost, AC
+    short: Сколько реально потрачено на выполненную работу.
+    definition: AC сравнивают с EV, чтобы понять эффективность затрат.
+    related:
+      - evm
+      - ev
+    lessonIds:
+      - m06-03
+  - id: cpi
+    slug: cpi
+    term: Индекс выполнения стоимости
+    en: Cost Performance Index, CPI
+    short: CPI = EV ÷ AC — сколько работы получаем на рубль затрат.
+    definition: CPI меньше 1 означает, что работа обходится дороже плана.
+    related:
+      - spi
+      - eac
+    lessonIds:
+      - m06-03
+  - id: spi
+    slug: spi
+    term: Индекс выполнения сроков
+    en: Schedule Performance Index, SPI
+    short: SPI = EV ÷ PV — темп работы относительно плана.
+    definition: SPI меньше 1 означает отставание от графика.
+    related:
+      - cpi
+    lessonIds:
+      - m06-03
+  - id: bac
+    slug: bac
+    term: Бюджет по завершении
+    en: Budget at Completion, BAC
+    short: Утверждённый бюджет всего проекта.
+    definition: BAC — база для расчёта освоенного объёма и прогноза EAC.
+    related:
+      - eac
+    lessonIds:
+      - m06-03
+  - id: eac
+    slug: eac
+    term: Прогноз стоимости завершения
+    en: Estimate at Completion, EAC
+    short: Сколько проект будет стоить в итоге по текущим данным.
+    definition:
+      При сохранении эффективности EAC = BAC ÷ CPI; если отклонение разовое — EAC = AC + (BAC
+      − EV). Выбор формулы — допущение.
+    related:
+      - cpi
+      - vac
+    lessonIds:
+      - m06-04
+  - id: etc
+    slug: etc
+    term: Оставшиеся затраты
+    en: Estimate to Complete, ETC
+    short: ETC = EAC − AC — сколько ещё потратим.
+    definition: ETC помогает спланировать финансирование оставшейся части проекта.
+    related:
+      - eac
+    lessonIds:
+      - m06-04
+  - id: vac
+    slug: vac
+    term: Отклонение на завершение
+    en: Variance at Completion, VAC
+    short: VAC = BAC − EAC — ожидаемое отклонение от бюджета.
+    definition: Отрицательный VAC означает прогноз перерасхода.
+    related:
+      - eac
+    lessonIds:
+      - m06-04
+  - id: reestr-riskov
+    slug: reestr-riskov
+    term: Реестр рисков
+    en: Risk register
+    short: Таблица рисков проекта с оценкой, владельцами, мерами и триггерами.
+    definition:
+      "Реестр полезен, пока он короткий и живой: его пересматривают раз в одну-две недели, закрывают
+      неактуальные риски и переносят случившиеся в журнал проблем."
+    related:
+      - risk
+      - vladelec-riska
+    lessonIds:
+      - j08-02
+  - id: veroyatnost-i-vliyanie
+    slug: veroyatnost-i-vliyanie
+    term: Вероятность и влияние
+    en: Probability and impact
+    short: "Две оценки риска: насколько вероятен и насколько сильно ударит."
+    definition: Их оценивают по шкале 1–5, описанной для проекта. Произведение даёт оценку риска для приоритизации.
+    related:
+      - matrica-riskov
+    lessonIds:
+      - j08-02
+  - id: matrica-riskov
+    slug: matrica-riskov
+    term: Матрица рисков
+    en: Risk matrix
+    short: Таблица вероятности и влияния, где видно, какие риски главные.
+    definition: Риски делят на красную, жёлтую и зелёную зоны и выбирают, с какими работать активно.
+    related:
+      - veroyatnost-i-vliyanie
+    lessonIds:
+      - j08-02
+  - id: vladelec-riska
+    slug: vladelec-riska
+    term: Владелец риска
+    en: Risk owner
+    short: Человек, который следит за риском и запускает реакцию.
+    definition:
+      Владелец — тот, кто ближе всего к источнику риска. Если владелец всех рисков — PM, реестр
+      не работает.
+    related:
+      - reestr-riskov
+    lessonIds:
+      - j08-02
+  - id: strategiya-reagirovaniya
+    slug: strategiya-reagirovaniya
+    term: Стратегия реагирования на риск
+    en: Risk response strategy
+    short: "Способ обращения с риском: избежать, снизить, передать или принять."
+    definition:
+      Для возможностей — использовать, усилить, разделить или принять. Передача помогает с деньгами,
+      но не со сроками.
+    related:
+      - trigger-riska
+    lessonIds:
+      - j08-03
+  - id: trigger-riska
+    slug: trigger-riska
+    term: Триггер риска
+    en: Risk trigger
+    short: Ранний сигнал, что риск начинает сбываться.
+    definition: Хороший триггер наступает раньше самого события, пока есть время реагировать.
+    related:
+      - strategiya-reagirovaniya
+    lessonIds:
+      - j08-03
+      - j08-04
+  - id: vozmozhnost
+    slug: vozmozhnost
+    term: Возможность
+    en: Opportunity
+    short: Неопределённое событие, которое может улучшить результат проекта.
+    definition: "Возможностями управляют как рисками: оценивают, назначают владельца, повышают шанс реализации."
+    related:
+      - risk
+    lessonIds:
+      - j08-01
+  - id: eskalaciya
+    slug: eskalaciya
+    term: Эскалация
+    en: Escalation
+    short: Передача вопроса тому, кто уполномочен его решить.
+    definition:
+      "Эскалация — рабочий инструмент: вовремя, с фактами, вариантами и конкретным запросом, с
+      предупреждением тех, кого она касается."
+    related:
+      - sponsor
+    lessonIds:
+      - j08-04
+      - m09-04
+  - id: zhurnal-problem
+    slug: zhurnal-problem
+    term: Журнал проблем
+    en: Issue log
+    short: Список случившихся проблем с ответственными и сроками решения.
+    definition: Реализовавшийся риск переносят из реестра рисков в журнал проблем.
+    related:
+      - problema
+      - reestr-riskov
+    lessonIds:
+      - j08-01
+  - id: trebovanie
+    slug: trebovanie
+    term: Требование
+    en: Requirement
+    short: Условие или возможность, которой должен обладать результат.
+    definition: "Требования не собирают, а выявляют: за решением, которое предлагает заказчик, ищут проблему."
+    related:
+      - nefunkcionalnoe-trebovanie
+      - user-story
+    lessonIds:
+      - m03-01
+  - id: nefunkcionalnoe-trebovanie
+    slug: nefunkcionalnoe-trebovanie
+    term: Нефункциональное требование
+    en: Non-functional requirement
+    short: "Требование к тому, как система работает: скорость, надёжность, безопасность, удобство."
+    definition: Нефункциональные требования редко называют сами, поэтому о них спрашивают явно.
+    related:
+      - trebovanie
+    lessonIds:
+      - m03-01
+  - id: user-story
+    slug: user-story
+    term: Пользовательская история
+    en: User story
+    short: Требование в формате «Как [роль], я хочу [действие], чтобы [ценность]».
+    definition:
+      История — повод для разговора, а не контракт. Её проверяют по INVEST и дополняют критериями
+      приёмки.
+    related:
+      - invest
+      - kriterii-priemki
+    lessonIds:
+      - m03-02
+  - id: invest
+    slug: invest
+    term: INVEST
+    en: INVEST
+    short: Критерии хорошей пользовательской истории.
+    definition:
+      Независимая, обсуждаемая, ценная, оцениваемая, небольшая, проверяемая. Нарушение критерия
+      — повод уточнить или разрезать историю.
+    related:
+      - user-story
+    lessonIds:
+      - m03-02
+  - id: kriterii-priemki
+    slug: kriterii-priemki
+    term: Критерии приёмки
+    en: Acceptance criteria
+    short: Условия, при которых задача или история считается выполненной.
+    definition: Удобный формат — сценарии «Дано — Когда — Тогда» с граничными случаями.
+    related:
+      - user-story
+      - dano-kogda-togda
+    lessonIds:
+      - m03-02
+  - id: dano-kogda-togda
+    slug: dano-kogda-togda
+    term: Дано — Когда — Тогда
+    en: Given — When — Then
+    short: "Формат сценариев приёмки: исходная ситуация, действие, результат."
+    definition: Сценарии понятны заказчику и удобны для тестирования.
+    related:
+      - kriterii-priemki
+    lessonIds:
+      - m03-02
+  - id: moscow
+    slug: moscow
+    term: MoSCoW
+    en: MoSCoW
+    short: "Приоритизация по группам: обязательно, важно, желательно, не в этот раз."
+    definition: Must должно быть меньшинством и помещаться в ресурсы с запасом.
+    related:
+      - rice
+      - wsjf
+    lessonIds:
+      - m03-03
+  - id: rice
+    slug: rice
+    term: RICE
+    en: RICE
+    short: "Приоритизация: охват × влияние × уверенность ÷ затраты."
+    definition: Уверенность снижает вес идей без данных. Затраты оценивает команда, ценность — бизнес.
+    related:
+      - moscow
+      - wsjf
+    lessonIds:
+      - m03-03
+  - id: wsjf
+    slug: wsjf
+    term: WSJF
+    en: Weighted Shortest Job First
+    short: "Приоритизация: стоимость задержки ÷ размер работы."
+    definition: Вперёд выходят задачи, которые дорого откладывать и быстро сделать.
+    related:
+      - stoimost-zaderzhki
+    lessonIds:
+      - m03-03
+  - id: stoimost-zaderzhki
+    slug: stoimost-zaderzhki
+    term: Стоимость задержки
+    en: Cost of Delay
+    short: Сколько ценности теряется, если работу сделать позже.
+    definition:
+      В WSJF её часто оценивают относительно как сумму ценности, критичности по времени и снижения
+      рисков.
+    related:
+      - wsjf
+    lessonIds:
+      - m03-03
+  - id: zapros-na-izmenenie
+    slug: zapros-na-izmenenie
+    term: Запрос на изменение
+    en: Change request
+    short: Формальный запрос изменить содержание, сроки или бюджет проекта.
+    definition:
+      "Путь запроса: регистрация, оценка влияния, варианты, решение владельца рамок, фиксация
+      в журнале изменений."
+    related:
+      - razrastanie-skoupa
+    lessonIds:
+      - m03-04
+  - id: status-otchet
+    slug: status-otchet
+    term: Статус-отчёт
+    en: Status report
+    short: Короткий регулярный отчёт о состоянии проекта для руководства.
+    definition:
+      "Отвечает на вопросы: общий статус и почему, что сделано, что дальше, риски, что нужно от
+      руководства."
+    related:
+      - svetofor
+    lessonIds:
+      - j09-04
+  - id: svetofor
+    slug: svetofor
+    term: Статус «светофор»
+    en: RAG status
+    short: "Общий статус проекта: зелёный, жёлтый или красный."
+    definition: Критерии цветов договаривают со спонсором заранее. Жёлтый статус — нормальный ранний сигнал.
+    related:
+      - status-otchet
+    lessonIds:
+      - j09-04
+  - id: protokol-vstrechi
+    slug: protokol-vstrechi
+    term: Протокол встречи
+    en: Meeting minutes
+    short: "Документ с итогами встречи: решения, задачи, открытые вопросы."
+    definition:
+      Протокол — не стенограмма. У каждой задачи есть действие, ответственный и дата; протокол
+      отправляют в тот же день.
+    related:
+      - zhurnal-resheniy
+    lessonIds:
+      - j09-03
+  - id: zhurnal-resheniy
+    slug: zhurnal-resheniy
+    term: Журнал решений
+    en: Decision log
+    short: "Список решений проекта: что, когда, кто, почему."
+    definition: Журнал решений отвечает на вопрос «почему так сделали» и защищает от повторных обсуждений.
+    related:
+      - protokol-vstrechi
+    lessonIds:
+      - j10-03
+  - id: plan-kommunikaciy
+    slug: plan-kommunikaciy
+    term: План коммуникаций
+    en: Communication plan
+    short: Кому, что, как часто, каким каналом и кто отвечает за информацию в проекте.
+    definition: План строится от потребностей аудиторий и включает правило срочного информирования спонсора.
+    related:
+      - stakeholder
+    lessonIds:
+      - j09-01
+  - id: asinhronnaya-kommunikaciya
+    slug: asinhronnaya-kommunikaciya
+    term: Асинхронная коммуникация
+    en: Asynchronous communication
+    short: Обмен информацией, который каждый читает в удобное время.
+    definition: Письменные статусы, записи в базе знаний и комментарии к документам заменяют многие встречи.
+    related:
+      - plan-kommunikaciy
+    lessonIds:
+      - j09-01
+  - id: vstrecha-s-rezultatom
+    slug: vstrecha-s-rezultatom
+    term: Встреча с результатом
+    en: Outcome-driven meeting
+    short: Встреча с целью, повесткой и решениями, зафиксированными до конца.
+    definition:
+      Если цель можно достичь письмом, встреча не нужна. Роли ведущего, секретаря и тайм-кипера
+      помогают держать фокус.
+    related:
+      - protokol-vstrechi
+    lessonIds:
+      - j09-02
+  - id: task-treker
+    slug: task-treker
+    term: Таск-трекер
+    en: Task tracker
+    short: Сервис для учёта задач, их статусов и ответственных.
+    definition:
+      Трекер выбирают по команде, процессу, интеграциям, хранению данных и стоимости. Он отражает
+      процесс, но не создаёт его.
+    related:
+      - doska-zadach
+    lessonIds:
+      - j10-01
+  - id: doska-zadach
+    slug: doska-zadach
+    term: Доска задач
+    en: Task board
+    short: Визуальное представление задач по этапам работы.
+    definition:
+      Колонки должны отражать реальные этапы, включая ожидание внешних сторон. Правила перехода
+      делают статус однозначным.
+    related:
+      - task-treker
+      - kanban
+    lessonIds:
+      - j10-02
+  - id: baza-znaniy
+    slug: baza-znaniy
+    term: База знаний
+    en: Knowledge base
+    short: Место хранения документов проекта, к которым возвращаются.
+    definition: Устав, план, журнал решений, протоколы, реестр рисков, инструкции. Актуальность важнее полноты.
+    related:
+      - zhurnal-resheniy
+    lessonIds:
+      - j10-03
+  - id: few-shot
+    slug: few-shot
+    term: Few-shot промптинг
+    en: Few-shot prompting
+    short: Приём, когда в промпт добавляют несколько примеров желаемого результата.
+    definition:
+      Модель повторяет стиль и формат примеров. Нужны разнообразные примеры и указание, что брать
+      из них только форму.
+    related:
+      - prompt
+      - shablon-prompta
+    lessonIds:
+      - j04-02
+      - m07-02
+  - id: shablon-prompta
+    slug: shablon-prompta
+    term: Шаблон промпта
+    en: Prompt template
+    short: Промпт с постоянной частью и переменными для меняющихся данных.
+    definition: Переменные вроде {{проект}} позволяют использовать один проверенный промпт много раз.
+    related:
+      - prompt
+      - biblioteka-promptov
+    lessonIds:
+      - j04-04
+      - m07-02
+  - id: biblioteka-promptov
+    slug: biblioteka-promptov
+    term: Библиотека промптов
+    en: Prompt library
+    short: Собрание проверенных промптов с описанием, владельцем и версией.
+    definition: Командная библиотека делает удачные приёмы общими; изменения проходят ревью и прогон тестов.
+    related:
+      - shablon-prompta
+    lessonIds:
+      - j04-04
+      - m07-05
+  - id: rol-v-prompte
+    slug: rol-v-prompte
+    term: Роль в промпте
+    en: Role prompting
+    short: Часть промпта, задающая, кем модели быть.
+    definition:
+      Роль задаёт уровень, стиль и точку зрения, но не защищает от выдуманных фактов — для этого
+      нужны ограничения.
+    related:
+      - prompt
+    lessonIds:
+      - j04-01
+  - id: iteraciya-prompta
+    slug: iteraciya-prompta
+    term: Итерация с моделью
+    en: Prompt iteration
+    short: Улучшение ответа уточняющими запросами в том же диалоге.
+    definition:
+      Хорошее уточнение говорит, что изменить и что оставить. Длинный или запутанный диалог стоит
+      начинать заново.
+    related:
+      - prompt
+    lessonIds:
+      - j04-03
+  - id: samokritika-modeli
+    slug: samokritika-modeli
+    term: Самокритика модели
+    en: Self-critique
+    short: Приём, когда модель критикует собственный ответ перед переписыванием.
+    definition: Самокритика находит проблемы стиля и структуры, но не знает ваших фактов.
+    related:
+      - iteraciya-prompta
+    lessonIds:
+      - j04-03
+  - id: sistemnyy-prompt
+    slug: sistemnyy-prompt
+    term: Постоянные инструкции
+    en: System prompt
+    short: Инструкции ассистенту, которые применяются к каждому запросу.
+    definition:
+      В них переносят проверенный промпт повторяющейся задачи; после изменений прогоняют набор
+      тестов.
+    related:
+      - ii-assistent
+    lessonIds:
+      - m07-04
+  - id: ii-assistent
+    slug: ii-assistent
+    term: ИИ-ассистент
+    en: AI assistant
+    short: Сервис или настроенный помощник на основе языковой модели для рабочих задач.
+    definition: У командного ассистента должны быть владелец, правила по данным и набор тестов.
+    related:
+      - llm
+      - sistemnyy-prompt
+    lessonIds:
+      - j03-03
+      - m07-04
+  - id: ii-agent
+    slug: ii-agent
+    term: ИИ-агент
+    en: AI agent
+    short: Языковая модель с инструментами и целью, которая сама планирует шаги.
+    definition:
+      Для агента задают границы автономии, отдельную учётную запись с минимальными правами, логи
+      и возможность отката.
+    related:
+      - chelovek-v-konture
+    lessonIds:
+      - m08-03
+  - id: chelovek-v-konture
+    slug: chelovek-v-konture
+    term: Человек в контуре
+    en: Human in the loop
+    short: Принцип, при котором значимые действия ИИ подтверждает человек.
+    definition:
+      К значимым действиям относят внешние коммуникации, изменение обязательств и необратимые
+      операции.
+    related:
+      - ii-agent
+    lessonIds:
+      - m08-03
+  - id: no-code
+    slug: no-code
+    term: No-code автоматизация
+    en: No-code automation
+    short: Автоматизация без программирования по схеме «триггер — условие — действие».
+    definition: Начинают со встроенных автоматизаций трекера, для связки сервисов используют платформы интеграций.
+    related:
+      - trigger-scenariya
+    lessonIds:
+      - m08-02
+  - id: trigger-scenariya
+    slug: trigger-scenariya
+    term: Триггер сценария
+    en: Trigger
+    short: Событие, которое запускает автоматизацию.
+    definition: Например, смена статуса задачи, новое письмо или время по расписанию.
+    related:
+      - no-code
+    lessonIds:
+      - m08-02
+  - id: sluzhebnaya-uchetka
+    slug: sluzhebnaya-uchetka
+    term: Служебная учётная запись
+    en: Service account
+    short: Отдельная учётная запись для автоматизации или агента.
+    definition: Позволяет выдать минимальные права и отличить действия автоматизации от действий людей.
+    related:
+      - ii-agent
+    lessonIds:
+      - m08-04
+  - id: tenevoe-ispolzovanie-ii
+    slug: tenevoe-ispolzovanie-ii
+    term: Теневое использование ИИ
+    en: Shadow AI
+    short: Использование ИИ-сервисов сотрудниками без ведома и правил компании.
+    definition:
+      Обычно признак реальной потребности. Помогает разрешённый удобный инструмент и понятные
+      правила, а не запрет.
+    related:
+      - politika-ii
+    lessonIds:
+      - m11-03
+  - id: politika-ii
+    slug: politika-ii
+    term: Политика использования ИИ
+    en: AI policy
+    short: "Правила компании: инструменты, данные, ответственность, инциденты."
+    definition:
+      Работает короткая политика, которая даёт разрешённые способы решать задачи, а не только
+      запреты.
+    related:
+      - tenevoe-ispolzovanie-ii
+      - klassifikaciya-dannyh
+    lessonIds:
+      - m11-03
+  - id: klassifikaciya-dannyh
+    slug: klassifikaciya-dannyh
+    term: Классификация данных
+    en: Data classification
+    short: Деление данных по категориям чувствительности.
+    definition:
+      Открытые, внутренние, конфиденциальные, персональные — для каждой категории определяют,
+      в какие инструменты можно отправлять данные.
+    related:
+      - politika-ii
+    lessonIds:
+      - m11-03
+  - id: personalnye-dannye
+    slug: personalnye-dannye
+    term: Персональные данные
+    en: Personal data
+    short: Любая информация, относящаяся к прямо или косвенно определённому человеку.
+    definition:
+      Имя, телефон, почта, голос на записи. Их обработку регулирует закон № 152-ФЗ; передача во
+      внешний ИИ-сервис — тоже обработка.
+    related:
+      - obezlichivanie
+      - 152-fz
+    lessonIds:
+      - j03-02
+      - m11-02
+  - id: 152-fz
+    slug: 152-fz
+    term: Закон № 152-ФЗ
+    en: Russian Personal Data Law
+    short: Федеральный закон «О персональных данных».
+    definition:
+      Устанавливает основания обработки, требования к локализации, трансграничной передаче и уведомлению
+      об утечках. В конкретных вопросах нужен юрист.
+    related:
+      - personalnye-dannye
+    lessonIds:
+      - m11-02
+  - id: kommercheskaya-tayna
+    slug: kommercheskaya-tayna
+    term: Коммерческая тайна
+    en: Trade secret
+    short: Информация, которую компания защищает режимом коммерческой тайны.
+    definition:
+      Цены, условия договоров, клиентские базы. Отправлять её во внешние ИИ-сервисы без разрешения
+      нельзя.
+    related:
+      - nda
+    lessonIds:
+      - j03-02
+      - m11-02
+  - id: nda
+    slug: nda
+    term: Соглашение о неразглашении
+    en: NDA
+    short: Договор, запрещающий раскрывать информацию третьим лицам.
+    definition: Внешний ИИ-сервис — тоже третье лицо; перед отправкой документа по NDA нужна проверка.
+    related:
+      - kommercheskaya-tayna
+    lessonIds:
+      - m11-02
+  - id: verifikaciya
+    slug: verifikaciya
+    term: Верификация ответа ИИ
+    en: Verification
+    short: Проверка результата работы ИИ перед использованием.
+    definition: Глубина проверки зависит от цены ошибки; для разных задач нужны свои чек-листы.
+    related:
+      - gallyucinaciya
+    lessonIds:
+      - j03-04
+      - m11-01
+  - id: predvzyatost-modeli
+    slug: predvzyatost-modeli
+    term: Предвзятость модели
+    en: Model bias
+    short: Систематические перекосы в ответах модели, унаследованные из данных обучения.
+    definition:
+      "Особенно важна в задачах о людях: решения о найме и оценке нельзя принимать по оценкам
+      ИИ."
+    related:
+      - llm
+    lessonIds:
+      - m11-04
+  - id: yandexgpt
+    slug: yandexgpt
+    term: YandexGPT
+    en: YandexGPT
+    short: Семейство языковых моделей Яндекса.
+    definition: Пример отечественной модели, доступной в России. Линейки продуктов регулярно обновляются.
+    related:
+      - llm
+      - gigachat
+    lessonIds:
+      - j03-03
+  - id: gigachat
+    slug: gigachat
+    term: GigaChat
+    en: GigaChat
+    short: Языковая модель и ассистент Сбера.
+    definition:
+      Пример отечественной модели, доступной в России. Условия использования данных уточняйте
+      в документах сервиса.
+    related:
+      - llm
+      - yandexgpt
+    lessonIds:
+      - j03-03
+  - id: transkribaciya
+    slug: transkribaciya
+    term: Расшифровка встреч
+    en: Transcription
+    short: Превращение записи встречи в текст, часто с конспектом.
+    definition: "Запись встречи — персональные данные участников: нужно их согласие и разрешённый сервис."
+    related:
+      - protokol-vstrechi
+    lessonIds:
+      - j03-03
+      - j09-03
+  - id: peregovory
+    slug: peregovory
+    term: Переговоры
+    en: Negotiation
+    short: Поиск соглашения между сторонами с разными интересами.
+    definition:
+      Принципиальные переговоры разделяют позиции и интересы, опираются на альтернативы и объективные
+      критерии.
+    related:
+      - batna
+      - poziciya-i-interes
+    lessonIds:
+      - m09-03
+  - id: poziciya-i-interes
+    slug: poziciya-i-interes
+    term: Позиция и интерес
+    en: Position and interest
+    short: Позиция — что человек требует, интерес — зачем ему это.
+    definition:
+      Позиции часто несовместимы, а интересы — совместимы. Главный вопрос — «почему это важно
+      для вас?».
+    related:
+      - peregovory
+    lessonIds:
+      - m09-03
+  - id: batna
+    slug: batna
+    term: Лучшая альтернатива соглашению
+    en: BATNA
+    short: Лучшее, что вы сделаете, если договориться не получится.
+    definition: Альтернатива определяет силу в переговорах. Её готовят заранее и стараются улучшить.
+    related:
+      - peregovory
+    lessonIds:
+      - m09-03
+  - id: upravlenie-ozhidaniyami
+    slug: upravlenie-ozhidaniyami
+    term: Управление ожиданиями
+    en: Expectation management
+    short: Работа по согласованию ожиданий стейкхолдеров с реальностью проекта.
+    definition:
+      Ожидания проявляют и фиксируют как договорённости, регулярно сверяют на демонстрациях, плохие
+      новости сообщают рано.
+    related:
+      - stakeholder
+    lessonIds:
+      - m09-02
+  - id: slozhnyy-razgovor
+    slug: slozhnyy-razgovor
+    term: Сложный разговор
+    en: Difficult conversation
+    short: Разговор с высокими ставками, разными мнениями и сильными эмоциями.
+    definition: "Помогает структура: общая цель, выслушать, признать эмоции, факты, варианты, фиксация договорённостей."
+    related:
+      - eskalaciya
+    lessonIds:
+      - m09-04
+  - id: vnutrennyaya-motivaciya
+    slug: vnutrennyaya-motivaciya
+    term: Внутренняя мотивация
+    en: Intrinsic motivation
+    short: Интерес к самой работе и желание сделать хорошо.
+    definition:
+      Для интеллектуальной работы важны автономия, мастерство и смысл — факторы, на которые PM
+      влияет напрямую.
+    related:
+      - delegirovanie
+    lessonIds:
+      - m10-01
+  - id: delegirovanie
+    slug: delegirovanie
+    term: Делегирование
+    en: Delegation
+    short: Передача задачи вместе с правом решения в оговорённых границах.
+    definition: Уровни делегирования — от «я решаю и сообщаю» до «решай сам» — делают границы явными.
+    related:
+      - one-on-one
+    lessonIds:
+      - m10-02
+  - id: one-on-one
+    slug: one-on-one
+    term: Встреча один на один
+    en: One-on-one, 1:1
+    short: Регулярный разговор руководителя с членом команды.
+    definition:
+      "Повестку ведёт сотрудник: самочувствие, препятствия, развитие, обратная связь. Заметки
+      конфиденциальны."
+    related:
+      - delegirovanie
+    lessonIds:
+      - m10-03
+  - id: konflikt
+    slug: konflikt
+    term: Конфликт в команде
+    en: Team conflict
+    short: Столкновение целей, интересов или представлений участников.
+    definition:
+      Часто корень конфликта в процессе или ролях. Разбирают по фактам и интересам, без назначения
+      виноватого.
+    related:
+      - stili-konflikta
+    lessonIds:
+      - m10-04
+  - id: stili-konflikta
+    slug: stili-konflikta
+    term: Стили поведения в конфликте
+    en: Thomas–Kilmann modes
+    short: Соперничество, сотрудничество, компромисс, избегание, приспособление.
+    definition:
+      "Модель Томаса — Килманна: у каждого стиля своё место; проблема — всегда использовать один
+      стиль."
+    related:
+      - konflikt
+    lessonIds:
+      - m10-04
+  - id: obratnaya-svyaz
+    slug: obratnaya-svyaz
+    term: Обратная связь
+    en: Feedback
+    short: Информация человеку о влиянии его действий.
+    definition:
+      Конструктивная обратная связь говорит о ситуации и поведении, а не о личности, и заканчивается
+      договорённостью.
+    related:
+      - one-on-one
+    lessonIds:
+      - m10-03
+  - id: fasilitaciya
+    slug: fasilitaciya
+    term: Фасилитация
+    en: Facilitation
+    short: Ведение встречи так, чтобы группа пришла к результату.
+    definition:
+      "Фасилитатор управляет процессом, а не содержанием: время, слово для всех, безопасность,
+      путь к решениям."
+    related:
+      - retrospektiva
+    lessonIds:
+      - j11-02
+      - m10-04
+  - id: psihologicheskaya-bezopasnost
+    slug: psihologicheskaya-bezopasnost
+    term: Психологическая безопасность
+    en: Psychological safety
+    short: Уверенность, что за честные слова и ошибки не накажут.
+    definition:
+      Без неё ретроспективы и разборы превращаются в ритуал. Помогают фокус на процессе и пример
+      руководителя.
+    related:
+      - retrospektiva
+    lessonIds:
+      - j11-02
+  - id: priemka
+    slug: priemka
+    term: Приёмка
+    en: Acceptance
+    short: Формальное подтверждение заказчиком, что результат соответствует договорённостям.
+    definition:
+      Приёмку проводят по заранее согласованным критериям; новые пожелания — это новая работа,
+      а не замечания.
+    related:
+      - kriterii-priemki
+      - zakrytie-proekta
+    lessonIds:
+      - j11-01
+  - id: peredacha-v-ekspluataciyu
+    slug: peredacha-v-ekspluataciyu
+    term: Передача в эксплуатацию
+    en: Handover
+    short: Передача результата тем, кто будет его поддерживать.
+    definition: Передают документацию, доступы, контакты и обучение; часто есть период сопровождения.
+    related:
+      - priemka
+    lessonIds:
+      - j11-01
+  - id: uroki-proekta
+    slug: uroki-proekta
+    term: Уроки проекта
+    en: Lessons learned
+    short: Опыт проекта, который стоит применить в других проектах.
+    definition:
+      Урок описывает, что произошло, почему и что делать в следующий раз. Урок выучен, когда изменил
+      практику.
+    related:
+      - retrospektiva
+    lessonIds:
+      - j11-03
+  - id: otchet-o-zakrytii
+    slug: otchet-o-zakrytii
+    term: Отчёт о закрытии
+    en: Closure report
+    short: "Итоговый документ проекта: результаты, отклонения, уроки, рекомендации."
+    definition: Честный отчёт даёт организации возможность учиться.
+    related:
+      - uroki-proekta
+    lessonIds:
+      - j11-03
+  - id: portfolio-pm
+    slug: portfolio-pm
+    term: Портфолио проект-менеджера
+    en: PM portfolio
+    short: Набор кейсов с историями и артефактами, показывающий, как вы работаете.
+    definition:
+      "Для Junior достаточно двух-трёх кейсов вокруг решений: контекст, роль, варианты, выбор,
+      результат, выводы."
+    related:
+      - project-manager
+    lessonIds:
+      - j12-03
+      - j01-04
+  - id: vorota
+    slug: vorota
+    term: Ворота этапа
+    en: Gate
+    short: Точка инвестиционного решения между этапами в модели Stage-Gate.
+    definition:
+      На воротах решают, продолжать, доработать, остановить или отложить проект, по заранее известным
+      критериям.
+    related:
+      - stage-gate
+      - kontrolnaya-tochka
+    lessonIds:
+      - m02-02
+  - id: stage-gate
+    slug: stage-gate
+    term: Stage-Gate
+    en: Stage-Gate
+    short: Модель, где этапы проекта разделены воротами с инвестиционными решениями.
+    definition: Внутри этапов команда может работать итерациями; ворота управляют инвестициями, а не работой.
+    related:
+      - vorota
+      - gibridnyy-podhod
+    lessonIds:
+      - m02-02
+  - id: water-scrum-fall
+    slug: water-scrum-fall
+    term: Water-Scrum-Fall
+    en: Water-Scrum-Fall
+    short: "Гибрид: длинный анализ, итеративная разработка и длинное внедрение."
+    definition: Ценность теряется на «водопадных» концах. Иногда это разумный компромисс, если он осознанный.
+    related:
+      - gibridnyy-podhod
+    lessonIds:
+      - m02-03
+  - id: minimalno-dostatochnyy-process
+    slug: minimalno-dostatochnyy-process
+    term: Минимально достаточный процесс
+    en: Minimum viable process
+    short: Столько правил, встреч и документов, сколько нужно для рисков проекта, и не больше.
+    definition: Каждый элемент процесса отвечает на вопрос «зачем» и помогает принимать решения.
+    related:
+      - gibridnyy-podhod
+    lessonIds:
+      - m02-04
+  - id: antikrizisnyy-plan
+    slug: antikrizisnyy-plan
+    term: Антикризисный план
+    en: Recovery plan
+    short: План спасения проблемного проекта на основе диагностики.
+    definition:
+      "Действия идут в три волны: остановить ухудшение, стабилизировать, выйти на новый план.
+      План сопровождают прогнозом и метриками контроля."
+    related:
+      - evm
+      - monte-karlo
+    lessonIds:
+      - m12-02
+  - id: diagnostika-proekta
+    slug: diagnostika-proekta
+    term: Диагностика проекта
+    en: Project health check
+    short: Анализ проекта по потоку, скоупу, бюджету и стейкхолдерам.
+    definition: Хороший диагноз опирается на данные и находит причины, объясняющие несколько симптомов сразу.
+    related:
+      - antikrizisnyy-plan
+    lessonIds:
+      - m12-01
+      - m12-02
