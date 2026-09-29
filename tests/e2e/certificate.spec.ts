@@ -1,17 +1,24 @@
 import { expect, test } from "./fixtures";
+import fs from "node:fs";
+import path from "node:path";
 import { completeQuiz, loadQuiz, signUp } from "./helpers";
 
-const junior = [
-  { slug: "kto-takoy-pm", quiz: "course/junior/j01-kto-takoy-pm/quiz.yaml" },
-  { slug: "osnovy-ii-dlya-pm", quiz: "course/junior/j03-osnovy-ii-dlya-pm/quiz.yaml" },
-  { slug: "planirovanie", quiz: "course/junior/j07-planirovanie/quiz.yaml" },
-];
+// Every published Junior module with a test: the certificate requires all of them.
+const juniorDir = path.join(process.cwd(), "content/course/junior");
+const junior = fs
+  .readdirSync(juniorDir)
+  .filter((dir) => fs.existsSync(path.join(juniorDir, dir, "quiz.yaml")))
+  .sort()
+  .map((dir) => ({
+    slug: dir.replace(/^j\d{2}-/, ""),
+    quiz: `course/junior/${dir}/quiz.yaml`,
+  }));
 
 test("all mod tests → final exam → certificate with public verification", async ({
   page,
   browser,
 }) => {
-  test.setTimeout(120_000);
+  test.setTimeout(300_000);
   await signUp(page);
 
   for (const mod of junior) {
