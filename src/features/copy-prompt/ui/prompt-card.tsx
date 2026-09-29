@@ -112,7 +112,12 @@ export function PromptCard({ prompt, compact = false, className }: PromptCardPro
         </div>
       ) : null}
 
-      <div className="relative mx-5 mt-4 max-h-72 overflow-auto rounded-lg bg-surface-sunken shadow-[inset_0_0_0_1px_var(--line)]">
+      <div
+        tabIndex={0}
+        role="region"
+        aria-label={`Текст промпта: ${prompt.title}`}
+        className="relative mx-5 mt-4 max-h-72 overflow-auto rounded-lg bg-surface-sunken shadow-[inset_0_0_0_1px_var(--line)] focus-visible:ring-2 focus-visible:ring-accent-ring focus-visible:outline-none"
+      >
         <pre className="p-4 font-mono text-[0.8125rem] leading-relaxed whitespace-pre-wrap text-fg">
           {filled}
         </pre>

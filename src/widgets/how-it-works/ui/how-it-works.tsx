@@ -36,8 +36,8 @@ export function HowItWorks() {
         </Reveal>
         <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
-            <Reveal key={step.title} delay={index * 70} className="h-full">
-              <li className="flex h-full flex-col gap-4 surface-card p-6">
+            <li key={step.title} className="h-full">
+              <Reveal delay={index * 70} className="flex h-full flex-col gap-4 surface-card p-6">
                 <div className="flex items-center justify-between">
                   <span className="grid size-10 place-items-center rounded-xl bg-accent-soft text-accent">
                     <step.icon aria-hidden className="size-5" />
@@ -46,8 +46,8 @@ export function HowItWorks() {
                 </div>
                 <h3 className="text-lg font-semibold tracking-tight">{step.title}</h3>
                 <p className="text-[0.9375rem] leading-relaxed text-fg-muted">{step.text}</p>
-              </li>
-            </Reveal>
+              </Reveal>
+            </li>
           ))}
         </ol>
       </Container>

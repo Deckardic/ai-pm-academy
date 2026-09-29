@@ -20,7 +20,7 @@
   /* Text */
   --fg: oklch(0.21 0.012 264);
   --fg-muted: oklch(0.46 0.012 264);
-  --fg-subtle: oklch(0.6 0.01 264);
+  --fg-subtle: oklch(0.52 0.01 264);
 
   /* Lines are translucent so they read correctly on any surface. */
   --line: oklch(0.21 0.012 264 / 0.09);
@@ -34,17 +34,17 @@
   --accent-ring: oklch(0.54 0.2 272 / 0.35);
 
   /* Levels */
-  --junior: oklch(0.6 0.14 162);
+  --junior: oklch(0.5 0.12 162);
   --junior-soft: oklch(0.6 0.14 162 / 0.1);
-  --middle: oklch(0.56 0.17 252);
+  --middle: oklch(0.5 0.17 252);
   --middle-soft: oklch(0.56 0.17 252 / 0.1);
-  --senior: oklch(0.68 0.15 62);
+  --senior: oklch(0.55 0.14 62);
   --senior-soft: oklch(0.68 0.15 62 / 0.12);
 
   /* Feedback */
-  --success: oklch(0.6 0.14 155);
+  --success: oklch(0.5 0.13 155);
   --success-soft: oklch(0.6 0.14 155 / 0.1);
-  --warning: oklch(0.72 0.15 75);
+  --warning: oklch(0.52 0.12 68);
   --warning-soft: oklch(0.72 0.15 75 / 0.12);
   --danger: oklch(0.58 0.2 25);
   --danger-soft: oklch(0.58 0.2 25 / 0.1);
@@ -87,7 +87,7 @@
 
   --fg: oklch(0.965 0.003 264);
   --fg-muted: oklch(0.74 0.008 264);
-  --fg-subtle: oklch(0.6 0.008 264);
+  --fg-subtle: oklch(0.68 0.008 264);
 
   --line: oklch(1 0 0 / 0.08);
   --line-strong: oklch(1 0 0 / 0.14);
