@@ -7,7 +7,7 @@ goals:
 - Выбирать метрики потока
 - Строить дашборд проекта
 - Автоматизировать сводки с ИИ
-status: planned
+status: published
 artifact: Дашборд проекта
 keyConcepts:
 - cycle time

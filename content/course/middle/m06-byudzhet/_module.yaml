@@ -6,7 +6,7 @@ summary: Оценка затрат, контроль бюджета и EVM.
 goals:
 - Контролировать бюджет проекта
 - Считать CPI, SPI и EAC
-status: planned
+status: published
 artifact: Бюджетная модель
 keyConcepts:
 - EVM
