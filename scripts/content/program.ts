@@ -37,16 +37,22 @@ for (const level of getLevels().filter((item) => item.status === "published")) {
     lines.push(`**Цели:** ${mod.goals.join("; ")}.`, "");
     mod.lessonsPlan.forEach((plan, index) => {
       const status = published.has(plan.slug) ? "✅ опубликован" : "⏳ к генерации";
-      lines.push(`${index + 1}. **${plan.title}** — ${plan.focus} (${plan.durationMin} мин, ${status})`);
+      lines.push(
+        `${index + 1}. **${plan.title}** — ${plan.focus} (${plan.durationMin} мин, ${status})`,
+      );
       for (const point of plan.keyPoints) lines.push(`   - ${point}`);
       if (plan.aiAngle) lines.push(`   - *ИИ:* ${plan.aiAngle}`);
       if (plan.practice) lines.push(`   - *Практика:* ${plan.practice}`);
     });
     lines.push("");
     if (mod.assignment) {
-      lines.push(`**Практическое задание — ${mod.assignment.title}.** ${mod.assignment.brief} *Результат:* ${mod.assignment.deliverable}.`, "");
+      lines.push(
+        `**Практическое задание — ${mod.assignment.title}.** ${mod.assignment.brief} *Результат:* ${mod.assignment.deliverable}.`,
+        "",
+      );
     }
-    if (mod.quizFocus.length > 0) lines.push(`**Тест модуля проверяет:** ${mod.quizFocus.join("; ")}.`, "");
+    if (mod.quizFocus.length > 0)
+      lines.push(`**Тест модуля проверяет:** ${mod.quizFocus.join("; ")}.`, "");
   }
 }
 

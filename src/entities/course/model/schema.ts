@@ -50,7 +50,9 @@ export const moduleSchema = z.object({
     )
     .default([]),
   /** Practical assignment spec (generated into assignment.mdx). */
-  assignment: z.object({ title: textSchema, deliverable: textSchema, brief: z.string() }).optional(),
+  assignment: z
+    .object({ title: textSchema, deliverable: textSchema, brief: z.string() })
+    .optional(),
   /** What the module test must cover. */
   quizFocus: z.array(z.string()).default([]),
   generation: z

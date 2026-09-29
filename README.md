@@ -12,17 +12,17 @@ pnpm dev                     # http://localhost:3000
 
 Локально база данных — встроенный Postgres на WASM ([PGlite](https://pglite.dev)) в `./.data`: ставить ничего не нужно, миграции применяются при старте. Письма (вход по ссылке, подтверждение email) печатаются в консоль.
 
-| Команда | Что делает |
-| --- | --- |
-| `pnpm dev` / `pnpm build` / `pnpm start` | Разработка, production-сборка, запуск сборки |
-| `pnpm lint` · `pnpm lint:fsd` · `pnpm typecheck` · `pnpm format` | ESLint, архитектура FSD (Steiger), TypeScript, Prettier |
-| `pnpm content:validate` | Схемы контента, перекрёстные ссылки, компиляция MDX, свежесть ИИ-уроков |
-| `pnpm content:generate --module j02` | Генерация уроков и теста модуля по спецификации (ИИ, офлайн) |
-| `pnpm content:review --module j02` | Перекрёстное ревью уроков моделью другого вендора |
-| `pnpm content:program` | Пересобрать `docs/PROGRAM.md` — программу курса из спецификаций модулей |
-| `pnpm test` · `pnpm test:e2e` | Юнит-тесты (Vitest) · e2e на production-сборке (Playwright) |
-| `pnpm db:generate` · `pnpm db:migrate` | Новая миграция из схемы · применение миграций к Postgres |
-| `pnpm check` | Всё, кроме e2e, одной командой |
+| Команда                                                          | Что делает                                                              |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `pnpm dev` / `pnpm build` / `pnpm start`                         | Разработка, production-сборка, запуск сборки                            |
+| `pnpm lint` · `pnpm lint:fsd` · `pnpm typecheck` · `pnpm format` | ESLint, архитектура FSD (Steiger), TypeScript, Prettier                 |
+| `pnpm content:validate`                                          | Схемы контента, перекрёстные ссылки, компиляция MDX, свежесть ИИ-уроков |
+| `pnpm content:generate --module j02`                             | Генерация уроков и теста модуля по спецификации (ИИ, офлайн)            |
+| `pnpm content:review --module j02`                               | Перекрёстное ревью уроков моделью другого вендора                       |
+| `pnpm content:program`                                           | Пересобрать `docs/PROGRAM.md` — программу курса из спецификаций модулей |
+| `pnpm test` · `pnpm test:e2e`                                    | Юнит-тесты (Vitest) · e2e на production-сборке (Playwright)             |
+| `pnpm db:generate` · `pnpm db:migrate`                           | Новая миграция из схемы · применение миграций к Postgres                |
+| `pnpm check`                                                     | Всё, кроме e2e, одной командой                                          |
 
 ## Стек
 

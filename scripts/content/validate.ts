@@ -72,7 +72,9 @@ async function main() {
       const plan = mod.lessonsPlan[index];
       if (!plan) warn(`Урок ${lesson.id} не описан в плане модуля ${mod.id}`);
       else if (plan.slug !== lesson.slug) {
-        error(`Урок ${lesson.id}: slug «${lesson.slug}» не совпадает с планом («${plan.slug}») на позиции ${index + 1}`);
+        error(
+          `Урок ${lesson.id}: slug «${lesson.slug}» не совпадает с планом («${plan.slug}») на позиции ${index + 1}`,
+        );
       }
     });
     if (mod.status === "published") {

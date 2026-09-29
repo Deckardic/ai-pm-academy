@@ -55,7 +55,9 @@ export function lessonUserPrompt(input: {
     `Напиши урок «${plan.title}». Фокус: ${plan.focus}.`,
     `Обязательно раскрой (каждый пункт — раздел или его часть):`,
     ...plan.keyPoints.map((point) => `- ${point}`),
-    plan.aiAngle ? `Ракурс ИИ в этом уроке: ${plan.aiAngle}.` : "Раздел про ИИ добавь, только если он действительно полезен в этой теме.",
+    plan.aiAngle
+      ? `Ракурс ИИ в этом уроке: ${plan.aiAngle}.`
+      : "Раздел про ИИ добавь, только если он действительно полезен в этой теме.",
     plan.practice ? `Упражнение для читателя в конце урока: ${plan.practice}.` : "",
     "",
     `Frontmatter: id: ${input.lessonId}, slug: ${plan.slug}, durationMin: ${plan.durationMin}, revisedAt: ${input.today}, draft: true.`,

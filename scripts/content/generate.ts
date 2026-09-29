@@ -47,7 +47,8 @@ function frontmatterErrors(source: string, expectedSlug?: string): string | null
   const match = /^---\r?\n([\s\S]*?)\r?\n---/.exec(source);
   if (!match) return "Нет frontmatter";
   const result = lessonFrontmatterSchema.safeParse(parseYaml(match[1]!));
-  if (result.success && expectedSlug && result.data.slug !== expectedSlug) return `slug должен быть ${expectedSlug}`;
+  if (result.success && expectedSlug && result.data.slug !== expectedSlug)
+    return `slug должен быть ${expectedSlug}`;
   return result.success
     ? null
     : result.error.issues.map((issue) => `${issue.path.join(".")}: ${issue.message}`).join("; ");
@@ -174,7 +175,11 @@ async function main() {
         const match = /^---\r?\n([\s\S]*?)\r?\n---/.exec(text);
         if (!match) return "Нет frontmatter";
         const parsed = assignmentFrontmatterSchema.safeParse(parseYaml(match[1]!));
-        return parsed.success ? null : parsed.error.issues.map((issue) => `${issue.path.join(".")}: ${issue.message}`).join("; ");
+        return parsed.success
+          ? null
+          : parsed.error.issues
+              .map((issue) => `${issue.path.join(".")}: ${issue.message}`)
+              .join("; ");
       },
     );
     model = result.model;
