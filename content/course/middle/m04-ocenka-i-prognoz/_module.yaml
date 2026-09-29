@@ -6,7 +6,7 @@ summary: Story points и часы, прогнозирование методом
 goals:
 - Прогнозировать сроки по историческим данным
 - Объяснять прогноз стейкхолдерам
-status: planned
+status: published
 artifact: Прогноз сроков релиза
 keyConcepts:
 - story points
