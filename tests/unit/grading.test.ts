@@ -148,4 +148,46 @@ describe("placement", () => {
       total: 1,
     });
   });
+
+  it("scores only the questions that were asked", () => {
+    expect(scorePlacement(placement, { j1: "a" }, ["j1"]).byLevel.middle.total).toBe(0);
+  });
+});
+
+describe("placement sampling", () => {
+  const single = (id: string, level: "junior" | "middle" | "senior", area: "pm" | "ai") => ({
+    id,
+    level,
+    area,
+    type: "single" as const,
+    prompt: "?",
+    explanation: "e",
+    options: [
+      { id: "a", text: "A" },
+      { id: "b", text: "B" },
+    ],
+    correct: "a",
+  });
+  const pool: Quiz = {
+    id: "placement",
+    kind: "placement",
+    title: "Тест на уровень",
+    passScore: 0.7,
+    questionsPerAttempt: 6,
+    questions: [
+      ...Array.from({ length: 8 }, (_, i) => single(`j${i}`, "junior", "pm")),
+      ...Array.from({ length: 4 }, (_, i) => single(`ja${i}`, "junior", "ai")),
+      ...Array.from({ length: 6 }, (_, i) => single(`m${i}`, "middle", "pm")),
+      single("s0", "senior", "ai"),
+    ],
+  };
+
+  it("keeps every level and area group and roughly the attempt size", () => {
+    const picked = pickQuestions(pool);
+    const groups = new Set(picked.map((question) => `${question.level}:${question.area}`));
+    expect(groups).toEqual(new Set(["junior:pm", "junior:ai", "middle:pm", "senior:ai"]));
+    expect(picked.length).toBeGreaterThanOrEqual(5);
+    expect(picked.length).toBeLessThanOrEqual(8);
+    expect(new Set(picked.map((question) => question.id)).size).toBe(picked.length);
+  });
 });

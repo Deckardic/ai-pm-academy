@@ -107,7 +107,7 @@ export function PlacementRunner({ intro }: { intro: ReactNode }) {
       startLabel="Пройти тест"
       graded={false}
       start={() => startPlacement()}
-      submit={(_attemptId, answers: Answers) => submitPlacement(answers)}
+      submit={(attemptId, answers: Answers) => submitPlacement(attemptId, answers)}
       renderSummary={(_result, placement) => {
         if (!placement) return null;
         const recommended = placement.recommended === "senior" ? "middle" : placement.recommended;

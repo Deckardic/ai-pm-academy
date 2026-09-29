@@ -2,7 +2,7 @@ id: placement-test
 kind: placement
 title: Тест на уровень
 passScore: 0.7
-questionsPerAttempt: 12
+questionsPerAttempt: 14
 questions:
   - id: p-project
     type: single
@@ -173,4 +173,508 @@ questions:
     correct: b
     explanation: Запрет без альтернативы порождает shadow AI. Нужны политика и разрешённые инструменты.
     level: senior
+    area: ai
+  - id: p-ops-regular
+    type: single
+    prompt: Что из этого — операционная работа, а не проект?
+    options:
+      - id: a
+        text: Переезд офиса к июлю
+      - id: b
+        text: Ежемесячная выплата зарплаты
+      - id: c
+        text: Запуск нового сайта
+    correct: b
+    explanation: Повторяется по регламенту и не имеет финала.
+    level: junior
+    area: pm
+  - id: p-milestone
+    type: single
+    prompt: Что такое веха?
+    options:
+      - id: a
+        text: Работа длительностью неделя
+      - id: b
+        text: Значимый момент без длительности, например «макеты утверждены»
+      - id: c
+        text: Отпуск команды
+    correct: b
+    explanation: Веха отмечает достигнутый результат.
+    level: junior
+    area: pm
+  - id: p-wbs-x
+    type: single
+    prompt: Для чего нужна WBS?
+    options:
+      - id: a
+        text: Разложить результат проекта на работы, которые можно оценить и поручить
+      - id: b
+        text: Посчитать зарплаты
+      - id: c
+        text: Выбрать трекер
+    correct: a
+    explanation: Это иерархическая структура работ.
+    level: junior
+    area: pm
+  - id: p-stakeholder
+    type: single
+    prompt: Кто такой стейкхолдер?
+    options:
+      - id: a
+        text: Только заказчик
+      - id: b
+        text: Любой, кто влияет на проект или на кого влияет его результат
+      - id: c
+        text: Только команда
+    correct: b
+    explanation: Стейкхолдеры — не только заказчик и команда.
+    level: junior
+    area: pm
+  - id: p-smart
+    type: single
+    prompt: Какая цель сформулирована лучше?
+    options:
+      - id: a
+        text: «Улучшить сайт»
+      - id: b
+        text: «К 1 марта клиенты оформляют заказ на сайте без звонка менеджеру»
+      - id: c
+        text: «Сделать всё хорошо»
+    correct: b
+    explanation: Конкретный результат со сроком.
+    level: junior
+    area: pm
+  - id: p-minutes
+    type: single
+    prompt: Что обязательно в протоколе встречи?
+    options:
+      - id: a
+        text: Дословная стенограмма
+      - id: b
+        text: Решения, задачи с ответственными и сроками, открытые вопросы
+      - id: c
+        text: Список опоздавших
+    correct: b
+    explanation: Протокол фиксирует итоги.
+    level: junior
+    area: pm
+  - id: p-status-color
+    type: single
+    prompt: Что означает жёлтый статус проекта?
+    options:
+      - id: a
+        text: Проект провален
+      - id: b
+        text: Есть отклонение или риск, но PM справляется в рамках плана
+      - id: c
+        text: Всё идеально
+    correct: b
+    explanation: Жёлтый — нормальный ранний сигнал.
+    level: junior
+    area: pm
+  - id: p-scope-no
+    type: single
+    prompt: Зачем в границах проекта раздел «не входит»?
+    options:
+      - id: a
+        text: Чтобы отказать заказчику
+      - id: b
+        text: Чтобы сделать видимыми ожидания, которые считают само собой разумеющимися
+      - id: c
+        text: Он не нужен
+    correct: b
+    explanation: Это защищает от разрастания скоупа.
+    level: junior
+    area: pm
+  - id: p-scrum-sm
+    type: single
+    prompt: Чем занимается Scrum Master?
+    options:
+      - id: a
+        text: Раздаёт задачи и отвечает за сроки
+      - id: b
+        text: Помогает команде работать по Scrum и убирает препятствия
+      - id: c
+        text: Пишет требования
+    correct: b
+    explanation: Он не распределяет задачи.
+    level: junior
+    area: pm
+  - id: p-retro
+    type: single
+    prompt: Какой результат хорошей ретроспективы?
+    options:
+      - id: a
+        text: Список виноватых
+      - id: b
+        text: Два-три конкретных действия с владельцами
+      - id: c
+        text: Отчёт руководителю
+    correct: b
+    explanation: Ретро должна менять работу.
+    level: junior
+    area: pm
+  - id: p-ai-data
+    type: single
+    prompt: Что можно отправлять в публичный ИИ-сервис?
+    options:
+      - id: a
+        text: Выгрузку клиентов с телефонами
+      - id: b
+        text: Обезличенное описание ситуации без имён и сумм
+      - id: c
+        text: Условия договора под NDA
+    correct: b
+    explanation: Персональные данные и коммерческая тайна — нельзя.
+    level: junior
+    area: ai
+  - id: p-ai-verify
+    type: single
+    prompt: ИИ подготовил статус-отчёт. Что нужно сделать перед отправкой?
+    options:
+      - id: a
+        text: Отправить сразу
+      - id: b
+        text: Сверить факты, цифры и даты с источником
+      - id: c
+        text: Попросить другую модель одобрить
+    correct: b
+    explanation: Модель пишет уверенно и когда ошибается.
+    level: junior
+    area: ai
+  - id: p-ai-prompt
+    type: single
+    prompt: Почему запрос «напиши письмо» даёт средний результат?
+    options:
+      - id: a
+        text: Модель ленится
+      - id: b
+        text: Модели не хватает контекста — адресата, ситуации, цели
+      - id: c
+        text: Нужно писать на английском
+    correct: b
+    explanation: Хороший промпт включает роль, контекст, задачу, формат и ограничения.
+    level: junior
+    area: ai
+  - id: p-ai-hallucination
+    type: single
+    prompt: Что такое галлюцинация языковой модели?
+    options:
+      - id: a
+        text: Сбой сервера
+      - id: b
+        text: Правдоподобный, но выдуманный ответ
+      - id: c
+        text: Отказ отвечать
+    correct: b
+    explanation: Это нормальное свойство моделей, поэтому проверка обязательна.
+    level: junior
+    area: ai
+  - id: p-m-wip
+    type: single
+    prompt: Что обычно происходит, если снизить количество задач в работе при той же пропускной способности?
+    options:
+      - id: a
+        text: Задачи проходят быстрее
+      - id: b
+        text: Задачи проходят медленнее
+      - id: c
+        text: Ничего
+    correct: a
+    explanation: По закону Литтла время прохождения падает.
+    level: middle
+    area: pm
+  - id: p-m-forecast
+    type: single
+    prompt: Как честнее назвать срок заказчику?
+    options:
+      - id: a
+        text: Одной датой по среднему темпу
+      - id: b
+        text: Датой с уровнем уверенности, например 85%, и условиями
+      - id: c
+        text: Самой ранней возможной датой
+    correct: b
+    explanation: Средняя дата — это около 50% уверенности.
+    level: middle
+    area: pm
+  - id: p-m-rice
+    type: single
+    prompt: Что учитывает приоритизация RICE?
+    options:
+      - id: a
+        text: Охват, влияние, уверенность и затраты
+      - id: b
+        text: Только мнение руководителя
+      - id: c
+        text: Только срок
+    correct: a
+    explanation: RICE = охват × влияние × уверенность ÷ затраты.
+    level: middle
+    area: pm
+  - id: p-m-evm
+    type: single
+    prompt: EV = 4 млн, AC = 5 млн. Что это значит?
+    options:
+      - id: a
+        text: Работа обходится дороже плана
+      - id: b
+        text: Проект опережает график
+      - id: c
+        text: Бюджет сэкономлен
+    correct: a
+    explanation: CPI = 0,8.
+    level: middle
+    area: pm
+  - id: p-m-change
+    type: single
+    prompt: Стейкхолдер просит функцию, сдвигающую релиз на месяц. Что делает PM?
+    options:
+      - id: a
+        text: Соглашается
+      - id: b
+        text: Оценивает влияние, готовит варианты и выносит решение владельцу рамок
+      - id: c
+        text: Отказывает без обсуждения
+    correct: b
+    explanation: Изменения идут через процедуру.
+    level: middle
+    area: pm
+  - id: p-m-cfd
+    type: single
+    prompt: На накопительной диаграмме потока расширяется полоса «Проверка». Что это?
+    options:
+      - id: a
+        text: Узкое место на проверке
+      - id: b
+        text: Проверка работает лучше всех
+      - id: c
+        text: Всё нормально
+    correct: a
+    explanation: Работа копится на этапе.
+    level: middle
+    area: pm
+  - id: p-m-interests
+    type: single
+    prompt: Логистика требует не показывать остатки дилерам. Как искать решение?
+    options:
+      - id: a
+        text: Выяснить интерес за позицией — чего опасается логистика
+      - id: b
+        text: Сразу уступить продажам
+      - id: c
+        text: Эскалировать
+    correct: a
+    explanation: Интересы часто совместимы.
+    level: middle
+    area: pm
+  - id: p-m-delegation
+    type: single
+    prompt: Что важнее всего при делегировании?
+    options:
+      - id: a
+        text: Явно договориться о границах решения, результате, сроке и точках проверки
+      - id: b
+        text: Проверять каждый шаг
+      - id: c
+        text: Переделывать результат
+    correct: a
+    explanation: Неясные границы — главная проблема делегирования.
+    level: middle
+    area: pm
+  - id: p-m-ai-chain
+    type: single
+    prompt: Как надёжнее извлечь требования из пяти протоколов с ИИ?
+    options:
+      - id: a
+        text: Одной большой просьбой
+      - id: b
+        text: Цепочкой шагов с цитатами-источниками и проверкой после каждого
+      - id: c
+        text: Не использовать ИИ
+    correct: b
+    explanation: Маленькие проверяемые шаги надёжнее.
+    level: middle
+    area: ai
+  - id: p-m-ai-numbers
+    type: single
+    prompt: Как посчитать медиану времени цикла по выгрузке 600 задач?
+    options:
+      - id: a
+        text: Попросить модель посчитать
+      - id: b
+        text: Попросить модель написать формулу, посчитать в таблице
+      - id: c
+        text: Прикинуть
+    correct: b
+    explanation: Модели ошибаются в арифметике.
+    level: middle
+    area: ai
+  - id: p-m-ai-agent
+    type: single
+    prompt: Какие действия ИИ-агента должны требовать подтверждения человека?
+    options:
+      - id: a
+        text: Внешние письма, изменение обязательств, необратимые действия
+      - id: b
+        text: Чтение задач
+      - id: c
+        text: Никакие
+    correct: a
+    explanation: Человек в контуре для значимых действий.
+    level: middle
+    area: ai
+  - id: p-m-ai-pilot
+    type: single
+    prompt: Как лучше внедрять ИИ в команде?
+    options:
+      - id: a
+        text: Приказ всем
+      - id: b
+        text: Пилот на добровольцах с правилами по данным и честными метриками
+      - id: c
+        text: Полный запрет
+    correct: b
+    explanation: Пилот снижает сопротивление и даёт данные.
+    level: middle
+    area: ai
+  - id: p-m-ai-few-shot
+    type: single
+    prompt: Что даёт few-shot промптинг?
+    options:
+      - id: a
+        text: Модель повторяет стиль и формат по примерам
+      - id: b
+        text: Бесплатный доступ
+      - id: c
+        text: Отсутствие ошибок
+    correct: a
+    explanation: Нужны разнообразные примеры.
+    level: middle
+    area: ai
+  - id: p-s-portfolio
+    type: single
+    prompt: Два проекта претендуют на одну команду. На каком уровне решают приоритет?
+    options:
+      - id: a
+        text: На уровне портфеля — тот, кто отвечает за приоритеты организации
+      - id: b
+        text: PM, кто первый попросил
+      - id: c
+        text: Команда голосованием
+    correct: a
+    explanation: Конфликт приоритетов выносят выше.
+    level: senior
+    area: pm
+  - id: p-s-benefits
+    type: single
+    prompt: Чем управление программой отличается от управления проектом?
+    options:
+      - id: a
+        text: Фокус на выгодах для бизнеса и согласовании связанных проектов
+      - id: b
+        text: Ничем
+      - id: c
+        text: Только размером бюджета
+    correct: a
+    explanation: Программа объединяет проекты ради общих выгод.
+    level: senior
+    area: pm
+  - id: p-s-pmo
+    type: single
+    prompt: Что обычно делает офис управления проектами?
+    options:
+      - id: a
+        text: Задаёт стандарты, шаблоны, отчётность и обучает PM
+      - id: b
+        text: Пишет код
+      - id: c
+        text: Продаёт продукт
+    correct: a
+    explanation: PMO строит систему управления.
+    level: senior
+    area: pm
+  - id: p-s-ai-policy
+    type: single
+    prompt: Что должна дать корпоративная политика ИИ, кроме запретов?
+    options:
+      - id: a
+        text: Разрешённые способы решать задачи
+      - id: b
+        text: Список наказаний
+      - id: c
+        text: Рейтинг сотрудников
+    correct: a
+    explanation: Запреты без альтернатив порождают теневое использование.
+    level: senior
+    area: ai
+  - id: p-s-ai-bias
+    type: single
+    prompt: Почему решения о найме нельзя принимать по оценкам ИИ?
+    options:
+      - id: a
+        text: Модели могут воспроизводить предвзятость, а решения о людях требуют ответственности человека
+      - id: b
+        text: ИИ медленный
+      - id: c
+        text: Это дорого
+    correct: a
+    explanation: ИИ может помогать с рутиной, но не решать о людях.
+    level: senior
+    area: ai
+  - id: p-j-risk-issue
+    type: single
+    prompt: Подрядчик уже сорвал срок. Это риск или проблема?
+    options:
+      - id: a
+        text: Риск
+      - id: b
+        text: Проблема
+      - id: c
+        text: Возможность
+    correct: b
+    explanation: Случившееся событие — проблема.
+    level: junior
+    area: pm
+  - id: p-j-cp
+    type: single
+    prompt: Какие работы определяют минимальный срок проекта?
+    options:
+      - id: a
+        text: Работы на критическом пути
+      - id: b
+        text: Самые дорогие
+      - id: c
+        text: Самые интересные
+    correct: a
+    explanation: Критический путь — самая длинная цепочка.
+    level: junior
+    area: pm
+  - id: p-j-meeting
+    type: single
+    prompt: Какая цель встречи сформулирована лучше?
+    options:
+      - id: a
+        text: «Обсудить макеты»
+      - id: b
+        text: «Утвердить макеты или получить финальный список правок»
+      - id: c
+        text: «Поговорить»
+    correct: b
+    explanation: Цель — результат к концу встречи.
+    level: junior
+    area: pm
+  - id: p-j-ai-tool
+    type: single
+    prompt: С какого вопроса начинается выбор ИИ-инструмента для работы?
+    options:
+      - id: a
+        text: Какие данные туда попадут и разрешён ли он компанией
+      - id: b
+        text: Какой рейтинг у модели
+      - id: c
+        text: Какой дизайн
+    correct: a
+    explanation: Сначала данные и политика.
+    level: junior
     area: ai

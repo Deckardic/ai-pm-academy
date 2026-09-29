@@ -24,8 +24,30 @@ function shuffleOrderItems<T>(items: readonly T[], random: Random): T[] {
 }
 
 export function pickQuestions(quiz: Quiz, random: Random = Math.random): Question[] {
-  if (quiz.kind === "placement") return quiz.questions;
+  if (quiz.kind === "placement") return pickPlacementQuestions(quiz, random);
   return shuffle(quiz.questions, random).slice(0, quiz.questionsPerAttempt);
+}
+
+/**
+ * Placement keeps the level/area mix of the whole pool: each (level, area) group
+ * gets a share of the attempt proportional to its size, at least one question.
+ */
+function pickPlacementQuestions(quiz: Quiz, random: Random): Question[] {
+  if (quiz.questions.length <= quiz.questionsPerAttempt) return quiz.questions;
+  const groups = new Map<string, Question[]>();
+  for (const question of quiz.questions) {
+    const key = `${question.level ?? "junior"}:${question.area ?? "pm"}`;
+    groups.set(key, [...(groups.get(key) ?? []), question]);
+  }
+  const picked: Question[] = [];
+  for (const items of groups.values()) {
+    const share = Math.round((items.length / quiz.questions.length) * quiz.questionsPerAttempt);
+    picked.push(...shuffle(items, random).slice(0, Math.max(1, share)));
+  }
+  const order = ["junior", "middle", "senior"];
+  return picked.sort(
+    (a, b) => order.indexOf(a.level ?? "junior") - order.indexOf(b.level ?? "junior"),
+  );
 }
 
 export function toPublicQuestion(question: Question, random: Random = Math.random): PublicQuestion {
@@ -109,7 +131,12 @@ export type PlacementResult = {
  * person answers at ≥ 70%. Senior content is not live yet, so a strong result
  * still recommends Middle and says Senior is next.
  */
-export function scorePlacement(quiz: Quiz, answers: Answers): PlacementResult {
+export function scorePlacement(
+  quiz: Quiz,
+  answers: Answers,
+  /** Questions shown in this attempt; defaults to the whole pool. */
+  questionIds?: readonly string[],
+): PlacementResult {
   const byLevel = {
     junior: { correct: 0, total: 0 },
     middle: { correct: 0, total: 0 },
@@ -117,7 +144,9 @@ export function scorePlacement(quiz: Quiz, answers: Answers): PlacementResult {
   };
   const byArea = { pm: { correct: 0, total: 0 }, ai: { correct: 0, total: 0 } };
 
+  const asked = questionIds ? new Set(questionIds) : null;
   for (const question of quiz.questions) {
+    if (asked && !asked.has(question.id)) continue;
     const result = gradeQuestion(question, answers[question.id]);
     const level = question.level ?? "junior";
     byLevel[level].total += 1;
